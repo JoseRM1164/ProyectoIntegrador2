@@ -1,0 +1,33 @@
+/* Custom styles */
+html,
+body {
+  height: 100%;
+}
+
+.intro {
+  height: 60%;
+  background-image: url('../img/introimg.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro_content {
+  max-width: 42em;
+  padding: 0 1.5rem;
+}
+
+.intro_h {
+  color: #2eb5e2;
+}
+
+.btn-custom {
+  color: white;
+  background-color: #26546f;
+  border-color: #26546f;
+}
+
+.btn-custom:hover {
+  background-color: #2eb5e2;
+  border-color: #2eb5e2;
+}
