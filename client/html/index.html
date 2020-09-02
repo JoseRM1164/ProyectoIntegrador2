@@ -23,75 +23,74 @@
   </head>
   <body>
     <!--Navbar-->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="../img/logo.png" width="100" height="50" alt="Logo" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark border-bottom">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo.png" width="100" height="50" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <a class="btn btn-primary my-1 mr-md-3 btn-custom" href="#"
-            >Comenzar Prueba</a
-          >
-          <a class="btn btn-primary my-1 mr-md-3 btn-custom" href="#">Log In</a>
-          <li class="nav-item active my-1">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <a class="btn btn-primary my-1 mr-md-3 btn-custom" href="#"
+              >Comenzar Prueba</a
             >
-          </li>
-          <li class="nav-item my-1">
-            <a class="nav-link" href="#">Tour</a>
-          </li>
-          <li class="nav-item my-1">
-            <a class="nav-link" href="#">Funciones</a>
-          </li>
-          <li class="nav-item my-1">
-            <a class="nav-link" href="#">Precio</a>
-          </li>
-          <li class="nav-item my-1">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-          <li class="nav-item my-1">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!--Contendio-->
-    <main class="container-fluid">
-      <!--Hero image-->
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center align-items-center text-center intro">
-          <div class="intro_content">
-            <h1 class="intro_h">¡Controla tu negocio desde cualquier lugar!</h1>
-            <a href="#" class="btn btn-primary btn-lg btn-custom my-4">Comenzar</a>
+            <a class="btn btn-primary my-1 mr-md-3 btn-custom" href="#">Log In</a>
+            <li class="nav-item active my-1">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item my-1">
+              <a class="nav-link" href="#">Tour</a>
+            </li>
+            <li class="nav-item my-1">
+              <a class="nav-link" href="#">Funciones</a>
+            </li>
+            <li class="nav-item my-1">
+              <a class="nav-link" href="#">Precio</a>
+            </li>
+            <li class="nav-item my-1">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+            <li class="nav-item my-1">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+     <!--Video BG-->
+      <div class="video-background-holder">
+        <div class="video-background-overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="../img/graph.mp4" type="video/mp4">
+          </video>
+        <div class="video-background-content container h-100">
+          <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <h1 class="display-4">Sistema de Inventarios</h1>
+              <p class="lead mb-0">¡Controla tu negocio desde cualquier lugar!</p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="">
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video">
-        <source src="../img/graph.mp4" type="video/mp4">
-      </video>
-        <div class="justify-content-center align-items-center text-center text-white">
-            <h1 class="displayt">Sistema de Inventarios</h1>
-            <p class="displayt2">Contamos con un sistema en el cual podrás crear tus inventarios, añadir productos, registrar tus ventas y proveedores. Contamos con reportes generados automáticamente y personaliados.</p>
-        </div>
-      </div>
+    </header>
+    <!--Contendio-->
+    <main class="container-fluid">
       
+      <!--Segunda seccion-->
       <div class="row px-lg-5 py-lg-5 contact-us">
         <div class="col-lg-6 col-xs">
           <h2 class="text-center">Contáctanos</h2>
@@ -133,5 +132,14 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $(".navbar-fixed-top");
+          $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+      });
+    </script>
   </body>
 </html>
