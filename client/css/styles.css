@@ -50,30 +50,19 @@ body {
   transition: background-color 200ms linear;
 }
 
-.intro {
-  height: 65vh;
-  background-image: url('../img/introimg.jpg');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+ul.list-1section li {
+  list-style-type: none;
+  font-size: 1.5em;
+  margin-bottom: 40px;
 }
 
-.intro_content {
-  max-width: 42em;
-  padding: 0 1.5rem;
+nav.navbar {
+  background-color: transparent;
 }
 
-.intro_h {
-  color: #2eb5e2;
-}
-
-.btn-custom {
-  color: white;
-  background-color: #26546f;
-  border-color: #26546f;
-}
-
-.btn-custom:hover {
-  background-color: #2eb5e2;
-  border-color: #2eb5e2;
+/* change navbar background on collapse */
+@media (max-width: 768px) {
+  nav.navbar {
+    background: #212529 ;
+  }
 }
