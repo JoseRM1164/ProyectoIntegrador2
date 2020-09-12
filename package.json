@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
-    "watch-css": "nodemon -e scss -x  \"npm run build-css\"",
-    "build-bootstrap": "node-sass --include-path scss scss/styles.scss public/styles/styles.css",
-    "watch-bootstrap": "nodemon -e scss -x \"npm run build-bootstrap\""
+    "watch-css": "nodemon -e scss -x  \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -32,7 +30,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.2",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
