@@ -1,55 +1,57 @@
 /* Custom styles */
 html,
 body {
-  height: 100%;
+  height: $video-translation * 2;
+}
+.panel-footer {
+  background: red;
+  color: white;
 }
 
-.video-background-holder {
-  position: relative;
-  background-color: black;
-  height: calc(100vh - 72px);
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
-}
+.video-background {
+  &-holder {
+    position: relative;
+    background-color: black;
+    height: calc(100vh - 72px);
+    min-height: 25rem;
+    width: $video-translation * 2;
+    overflow: hidden;
+    > video {
+      @include indexedPosition(absolute, 0);
+      top: $video-translation;
+      left: $video-translation;
+      min-width: $video-translation * 2;
+      min-height: $video-translation * 2;
+      width: auto;
+      height: auto;
+      -ms-transform: translateX(-$video-translation)
+        translateY(-$video-translation);
+      -moz-transform: translateX(-$video-translation)
+        translateY(-$video-translation);
+      -webkit-transform: translateX(-$video-translation)
+        translateY(-$video-translation);
+      transform: translateX(-$video-translation) translateY(-$video-translation);
+      filter: blur(5px);
+    }
+  }
 
-.video-background-holder video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  filter: blur(5px);
-}
+  &-content {
+    @include indexedPosition(relative, 2);
+  }
 
-.video-background-content {
-  position: relative;
-  z-index: 2;
+  &-overlay {
+    @include indexedPosition(absolute, 1);
+    top: 0;
+    left: 0;
+    height: $video-translation;
+    width: $video-translation;
+    background-color: black;
+    opacity: 0.5;
+  }
 }
-
-.video-background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
-}
-
 
 ul.list-1section li {
   list-style-type: none;
   font-size: 1.5em;
   margin-bottom: 40px;
 }
-
-

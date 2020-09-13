@@ -1,0 +1,10 @@
+@mixin indexedPosition($position: absolute, $index: 1) {
+  position: $position;
+  index: $index;
+}
+
+@mixin paddedSize($padding: 10px, $size: 1em) {
+    padding: $padding;
+    font-size: $size;
+}
+
