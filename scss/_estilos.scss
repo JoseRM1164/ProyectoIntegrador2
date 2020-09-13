@@ -3,10 +3,6 @@ html,
 body {
   height: $video-translation * 2;
 }
-.panel-footer {
-  background: red;
-  color: white;
-}
 
 .video-background {
   &-holder {
@@ -54,4 +50,8 @@ ul.list-1section li {
   list-style-type: none;
   font-size: 1.5em;
   margin-bottom: 40px;
+}
+
+.centered-th {
+    text-align: center;
 }
