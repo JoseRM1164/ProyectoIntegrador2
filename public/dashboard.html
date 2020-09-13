@@ -8,7 +8,169 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>Sistema de Inventarios</title>
+    <title>Sistema de Inventarios - Home</title>
   </head>
-  <body></body>
+  <body>
+    <div class="dashboard-wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="210" height="105" alt="Logo" />
+          </a>
+        </div>
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a
+              href="#inventariosSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Inventarios</a
+            >
+            <ul class="collapse list-unstyled" id="inventariosSubmenu">
+              <li>
+                <a href="#">Nuevo</a>
+              </li>
+              <li>
+                <a href="#">Borrar</a>
+              </li>
+              <li>
+                <a href="#">Actualizar</a>
+              </li>
+              <li>
+                <a href="#">Visualizar</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#productosSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Productos</a
+            >
+            <ul class="collapse list-unstyled" id="productosSubmenu">
+              <li>
+                <a href="#">Producto 1</a>
+              </li>
+              <li>
+                <a href="#">Producto 2</a>
+              </li>
+              <li>
+                <a href="#">Producto 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#ventasSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Ventas</a
+            >
+            <ul class="collapse list-unstyled" id="ventasSubmenu">
+              <li>
+                <a href="#">Venta 1</a>
+              </li>
+              <li>
+                <a href="#">Venta 2</a>
+              </li>
+              <li>
+                <a href="#">Venta 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#proveedoresSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Proveedores</a
+            >
+            <ul class="collapse list-unstyled" id="proveedoresSubmenu">
+              <li>
+                <a href="#">Proveedor 1</a>
+              </li>
+              <li>
+                <a href="#">Proveedor 2</a>
+              </li>
+              <li>
+                <a href="#">Proveedor 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#reportesSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Reportes</a
+            >
+            <ul class="collapse list-unstyled" id="reportesSubmenu">
+              <li>
+                <a href="#">Reporte 1</a>
+              </li>
+              <li>
+                <a href="#">Reporte 2</a>
+              </li>
+              <li>
+                <a href="#">Reporte 3</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <a class="btn btn-primary my-1 mr-md-3 btn-custom" href="#"
+                >Comenzar Prueba</a
+              >
+              <a
+                class="btn btn-primary my-1 mr-md-3 btn-custom"
+                href="login.html"
+                >Log In</a
+              >
+            </ul>
+        </nav>
+      </div>
+      <div id="content"></div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+          $('#sidebar').toggleClass('active');
+        });
+      });
+    </script>
+  </body>
 </html>
