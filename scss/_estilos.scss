@@ -3,6 +3,10 @@ html,
 body {
   height: $video-translation * 2;
 }
+.panel-footer {
+  background: red;
+  color: white;
+}
 
 .video-background {
   &-holder {
