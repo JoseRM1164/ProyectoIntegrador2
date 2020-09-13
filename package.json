@@ -1,0 +1,44 @@
+{
+  "name": "tunegocioweb",
+  "version": "1.0.0",
+  "description": "Proyecto para la clase de desarrollo web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
+    "watch-css": "nodemon -e scss -x  \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DIODERFOOL/TuNegocioWeb.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Angular",
+    "Express",
+    "Passport",
+    "SASS",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Fall Guys Web",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DIODERFOOL/TuNegocioWeb/issues"
+  },
+  "homepage": "https://github.com/DIODERFOOL/TuNegocioWeb#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "stylelint": "^13.7.0",
+    "watch": "^1.0.2"
+  }
+}
