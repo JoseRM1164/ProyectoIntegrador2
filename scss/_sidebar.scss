@@ -1,76 +1,73 @@
 .dashboard-wrapper {
-    display: flex;
-    align-items: stretch;
+  display: flex;
+  align-items: stretch;
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
-    background: $primary;
-}
-
-#sidebar .sidebar-header {
+  min-width: $sidebar-size;
+  max-width: $sidebar-size;
+  min-height: 100vh;
+  background: $primary;
+  .sidebar-header {
     padding: 20px;
-}
+  }
+  ul {
+    &.components {
+      background-color: $white;
+      color: $dark;
+    }
 
-#sidebar ul.components {
-    background-color: #fff;
-    color: $dark;
-}
+    li ul {
+      background-color: darken($light, 10%);
+      @include paddedSize(10px, 0.8em);
+    }
+    a {
+      @include paddedSize(10px, 1.1em);
+      color: lighten($black, 20%);
+      display: block;
+      border-bottom: 1px solid $secondary;
+      &:hover {
+        color: $primary;
+        background: #fff;
+      }
+    }
 
-#sidebar ul li  ul{
-    background-color: $gray-300;
-    font-size: 0.8em; 
-}
+    p {
+      color: #fff;
+      padding: 10px;
+    }
+  }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    color: $gray-700;
-    font-size: 1.1em;
-    display: block;
-    border-bottom: 1px solid $secondary;
-}
-
-#sidebar ul li a:hover {
-    color: $primary;
-    background: #fff;
-}
-
-#sidebar a, a:hover, a:focus {
+  a,
+  a:hover,
+  a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
+  }
+
+  &.active {
+    margin-left: -$sidebar-size;
+  }
 }
 
-#sidebar.active {
-    margin-left: -250px;
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
+a[data-toggle='collapse'] {
+  position: relative;
 }
 
 .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%)
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
+  #sidebar {
+    margin-left: -$sidebar-size;
+    .active {
+      margin-left: 0;
     }
-
-    #sidebar.active {
-        margin-left: 0;
-    }
+  }
 }
-
