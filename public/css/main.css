@@ -11785,10 +11785,6 @@ ul.list-1section li {
 .centered-th {
   text-align: center; }
 
-.dashboard-wrapper {
-  display: flex;
-  align-items: stretch; }
-
 #sidebar {
   min-width: 250px;
   max-width: 250px;
@@ -11839,6 +11835,10 @@ a[data-toggle='collapse'] {
     margin-left: -250px; }
     #sidebar .active {
       margin-left: 0; } }
+
+.dashboard-wrapper {
+  display: flex;
+  align-items: stretch; }
 
 .panel-footer {
   background: #1d2124;
