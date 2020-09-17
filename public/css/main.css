@@ -11833,8 +11833,10 @@ a[data-toggle='collapse'] {
 @media (max-width: 768px) {
   #sidebar {
     margin-left: -250px; }
-    #sidebar .active {
-      margin-left: 0; } }
+    #sidebar.active {
+      margin-left: 0; }
+  .navbar-buttons {
+    margin-right: auto; } }
 
 .dashboard-wrapper {
   display: flex;
