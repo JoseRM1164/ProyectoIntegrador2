@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/main.css" />
@@ -23,25 +23,13 @@
             <a href="./dashboard.html">Home</a>
           </li>
           <li>
-            <a
-              href="./inventarios.html"
-              aria-expanded="false"
-              >Inventarios</a
-            >
+            <a href="./inventarios.html" aria-expanded="false">Inventarios</a>
           </li>
           <li>
-            <a
-              href="./inventarios.html"
-              aria-expanded="false"
-              >Productos</a
-            >
+            <a href="./inventarios.html" aria-expanded="false">Productos</a>
           </li>
           <li>
-            <a
-              href="./reportes.html"
-              aria-expanded="false"
-              >Reportes</a
-            >
+            <a href="./reportes.html" aria-expanded="false">Reportes</a>
           </li>
           <li>
             <a
@@ -69,26 +57,22 @@
               <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-bars"></i>
               </button>
-              <ul class=" mr-auto">
+              <div class=" mr-auto">
                 <h1 class="display-1"><strong>Perfil</strong></h1>
-              </ul>
-              <ul class="navbar-nav ml-auto navbar-buttons">
-                <a class="btn-custom" href="./profile.html"
-                  >Guardar Perfil</a
-                >
+              </div>
+              <div class="navbar-nav ml-auto navbar-buttons">
+                <a class="btn-custom" href="./profile.html">Guardar Perfil</a>
                 <a class="btn-custom" href="./menuPerfiles.html"
                   >Administrar Perfiles</a
                 >
-                <a class="btn-custom" href="./index.html"
-                  >Cerrar Sesión</a
-                >
-              </ul>
+                <a class="btn-custom" href="./index.html">Cerrar Sesión</a>
+              </div>
             </nav>
           </div>
         </div>
         <form>
           <div class="form-group">
-            <label for="nombreInput1"><h2>Nombre:</h2></label>
+            <h2><label for="nombreInput1">Nombre:</label></h2>
             <input
               type="text"
               class="form-control"
@@ -97,7 +81,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="apellidosInput1"><h2>Apellidos:</h2></label>
+            <h2><label for="apellidosInput1">Apellidos:</label></h2>
             <input
               type="text"
               class="form-control"
@@ -106,17 +90,16 @@
             />
           </div>
           <div class="form-group">
-            <label for="correoInput1"><h2>Correo:</h2></label>
+            <h2><label for="correoInput1">Correo:</label></h2>
             <input
               type="email"
               class="form-control"
               id="correoInput1"
-              aria-describedby="emailHelp"
               placeholder="jdgcastillo@gmail.com"
             />
           </div>
           <div class="form-group">
-            <label for="passInput1"><h2>Contraseña:</h2></label>
+            <h2><label for="passInput1">Contraseña:</label></h2>
             <input
               type="password"
               class="form-control"
@@ -125,7 +108,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="telefonoInput1"><h2>Teléfono:</h2></label>
+            <h2><label for="telefonoInput1">Teléfono:</label></h2>
             <input
               type="tel"
               class="form-control"
@@ -133,7 +116,7 @@
               placeholder="552323098"
             />
           </div>
-          <label><h2>Rol:</h2></label>
+          <h2><label>Rol:</label></h2>
           <div class="form-group">
             <div class="form-check form-check-inline">
               <input
@@ -142,9 +125,11 @@
                 id="rolCheckbox1"
                 value="admin"
               />
-              <label class="form-check-label" for="rolCheckbox1"
-                ><h4>Administrador</h4></label
-              >
+              <h4>
+                <label class="form-check-label" for="rolCheckbox1"
+                  >Administrador</label
+                >
+              </h4>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -153,9 +138,11 @@
                 id="rolCheckbox2"
                 value="leb"
               />
-              <label class="form-check-label" for="rolCheckbox2"
-                ><h4>Lectura, Escritura y borrado</h4></label
-              >
+              <h4>
+                <label class="form-check-label" for="rolCheckbox2"
+                  >Lectura, Escritura y borrado</label
+                >
+              </h4>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -164,9 +151,11 @@
                 id="rolCheckbox3"
                 value="le"
               />
-              <label class="form-check-label" for="rolCheckbox3"
-                ><h4>Lectura y Escritura</h4></label
-              >
+              <h4>
+                <label class="form-check-label" for="rolCheckbox3"
+                  >Lectura y Escritura</label
+                >
+              </h4>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -175,9 +164,11 @@
                 id="rolCheckbox4"
                 value="sl"
               />
-              <label class="form-check-label" for="rolCheckbox4"
-                ><h4>S&oacute;lo lectura</h4></label
-              >
+              <h4>
+                <label class="form-check-label" for="rolCheckbox4"
+                  >S&oacute;lo lectura</label
+                >
+              </h4>
             </div>
           </div>
         </form>
@@ -201,7 +192,9 @@
                   ><h4 class="text-uppercase">Aviso de Privacidad</h4></a
                 >
               </li>
-              <br />
+              <li>
+                <br />
+              </li>
 
               <li>
                 <a href="#!" target="_blank"

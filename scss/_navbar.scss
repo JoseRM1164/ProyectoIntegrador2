@@ -1,3 +1,7 @@
+.display-1 {
+    padding-left: 20px;
+}
+
 .btn-custom {
   @extend .btn;
   @extend .btn-primary;
@@ -54,7 +58,7 @@
 
 @media (max-width: 768px) {
     .display-1 {
-        font-size: $display1-size / 2; 
+        font-size: $display1-size / 5 * 3; 
     }
 }
 

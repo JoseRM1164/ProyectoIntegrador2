@@ -11915,6 +11915,9 @@ a[data-toggle='collapse'] {
   .navbar-buttons {
     margin-right: auto; } }
 
+.display-1 {
+  padding-left: 20px; }
+
 .btn-custom:hover {
   background-color: #0f4f63; }
 
@@ -11943,7 +11946,7 @@ a[data-toggle='collapse'] {
 
 @media (max-width: 768px) {
   .display-1 {
-    font-size: 3rem; } }
+    font-size: 3.6rem; } }
 
 @media (min-width: 768px) {
   .display-1 {
