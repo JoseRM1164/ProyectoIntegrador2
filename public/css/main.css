@@ -11845,3 +11845,7 @@ a[data-toggle='collapse'] {
 .panel-footer {
   background: #1d2124;
   color: white; }
+
+.card {
+  margin: 3em;
+  width: 18em; }
