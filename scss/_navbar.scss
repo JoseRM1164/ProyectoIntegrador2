@@ -1,0 +1,53 @@
+.btn-custom {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .my-1;
+  @extend .mr-md-3;
+
+  &:hover {
+    background-color: darken($primary, 30%);
+  }
+}
+
+.btn-navsearch {
+  @extend .btn;
+  @extend .btn-outline-success;
+  @extend .my-2;
+  @extend .my-sm-0;
+
+  &:hover {
+    -webkit-animation: wiggle-anim $btnanim-duracion linear infinite alternate;
+    -moz-animation: wiggle-anim $btnanim-duracion linear infinite alternate;
+    animation: wiggle-anim $btnanim-duracion linear infinite alternate;
+  }
+}
+
+@-webkit-keyframes wiggle-anim {
+  0% {
+    background-color: $success;
+  }
+
+  100% {
+    background-color: lighten($success, 30%);
+  }
+}
+
+@-moz-keyframes wiggle-anim {
+  0% {
+    background-color: $success;
+  }
+
+  100% {
+    background-color: lighten($success, 30%);
+  }
+}
+
+@keyframes wiggle-anim {
+  0% {
+    background-color: $success;
+  }
+
+  100% {
+    background-color: lighten($success, 30%);
+  }
+}
