@@ -11849,3 +11849,7 @@ a[data-toggle='collapse'] {
 .card {
   margin: 3em;
   width: 18em; }
+
+.modal-card {
+  margin: auto;
+  margin-top: 1em; }
