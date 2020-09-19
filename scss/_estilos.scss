@@ -12,19 +12,25 @@ body {
     min-height: 25rem;
     width: $video-translation * 2;
     overflow: hidden;
-    > video {
+
+    >
+    video {
       @include indexedPosition(absolute, 0);
+
       top: $video-translation;
       left: $video-translation;
       min-width: $video-translation * 2;
       min-height: $video-translation * 2;
       width: auto;
       height: auto;
-      -ms-transform: translateX(-$video-translation)
+      -ms-transform:
+        translateX(-$video-translation)
         translateY(-$video-translation);
-      -moz-transform: translateX(-$video-translation)
+      -moz-transform:
+        translateX(-$video-translation)
         translateY(-$video-translation);
-      -webkit-transform: translateX(-$video-translation)
+      -webkit-transform:
+        translateX(-$video-translation)
         translateY(-$video-translation);
       transform: translateX(-$video-translation) translateY(-$video-translation);
       filter: blur(5px);
@@ -37,6 +43,7 @@ body {
 
   &-overlay {
     @include indexedPosition(absolute, 1);
+
     top: 0;
     left: 0;
     height: $video-translation;
@@ -53,5 +60,5 @@ ul.list-1section li {
 }
 
 .centered-th {
-    text-align: center;
+  text-align: center;
 }
