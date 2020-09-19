@@ -1,16 +1,13 @@
-.dashboard-wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
 #sidebar {
   min-width: $sidebar-size;
   max-width: $sidebar-size;
   min-height: 100vh;
   background: $primary;
+
   .sidebar-header {
     padding: 20px;
   }
+
   ul {
     &.components {
       background-color: $white;
@@ -19,13 +16,17 @@
 
     li ul {
       background-color: darken($light, 10%);
+
       @include paddedSize(10px, 0.8em);
     }
+
     a {
       @include paddedSize(10px, 1.1em);
+
       color: lighten($black, 20%);
       display: block;
       border-bottom: 1px solid $secondary;
+
       &:hover {
         color: $primary;
         background: #fff;
@@ -63,11 +64,16 @@ a[data-toggle='collapse'] {
   transform: translateY(-50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   #sidebar {
     margin-left: -$sidebar-size;
-    .active {
+
+    &.active {
       margin-left: 0;
     }
+  }
+
+  .navbar-buttons {
+    margin-right: auto;
   }
 }
