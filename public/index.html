@@ -325,6 +325,12 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/popper.js/dist/popper-utils.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+      $(".dropdown-menu a ").click(function () {
+          let x = $(this).text();
+          $(this).parents(".input-group-btn").find('.btn').text($(this).text()); 
+      });
+      </script>
   </body>
 
 
