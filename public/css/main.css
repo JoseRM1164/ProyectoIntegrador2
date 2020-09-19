@@ -11945,6 +11945,14 @@ a[data-toggle='collapse'] {
   .display-1 {
     font-size: 3rem; } }
 
+@media (min-width: 768px) {
+  .display-1 {
+    font-size: 4rem; } }
+
+@media (min-width: 1200px) {
+  .display-1 {
+    font-size: 6rem; } }
+
 .dashboard-wrapper {
   display: flex;
   align-items: stretch; }
@@ -11960,6 +11968,10 @@ a[data-toggle='collapse'] {
 .modal-card {
   margin: auto;
   margin-top: 1em; }
+
+.card-body {
+  padding-left: 0;
+  padding-right: 0; }
 
 table.dataTable {
   clear: both;
