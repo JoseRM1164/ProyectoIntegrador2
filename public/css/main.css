@@ -11830,7 +11830,7 @@ a[data-toggle='collapse'] {
   right: 20px;
   transform: translateY(-50%); }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   #sidebar {
     margin-left: -250px; }
     #sidebar.active {
