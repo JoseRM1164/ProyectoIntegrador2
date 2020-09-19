@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Perfil | Sistema de Inventarios</title>
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="210" height="105" alt="Logo" />
+          </a>
+        </div>
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a
+              href="#inventariosSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Inventarios</a
+            >
+            <ul class="collapse list-unstyled" id="inventariosSubmenu">
+              <li>
+                <a href="#">Nuevo</a>
+              </li>
+              <li>
+                <a href="#">Borrar</a>
+              </li>
+              <li>
+                <a href="#">Actualizar</a>
+              </li>
+              <li>
+                <a href="#">Visualizar</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#productosSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Productos</a
+            >
+            <ul class="collapse list-unstyled" id="productosSubmenu">
+              <li>
+                <a href="#">Producto 1</a>
+              </li>
+              <li>
+                <a href="#">Producto 2</a>
+              </li>
+              <li>
+                <a href="#">Producto 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#reportesSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Reportes</a
+            >
+            <ul class="collapse list-unstyled" id="reportesSubmenu">
+              <li>
+                <a href="#">Reporte 1</a>
+              </li>
+              <li>
+                <a href="#">Reporte 2</a>
+              </li>
+              <li>
+                <a href="#">Reporte 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#reportesSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Perfil</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div id="content" class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 col-sm p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-bars"></i>
+              </button>
+              <h1 class="display-1"><strong>Perfil</strong></h1>
+              <ul class="navbar-nav ml-auto navbar-buttons">
+                <a class="btn btn-primary my-1 mr-md-3 btn-custom"
+                  >Guardar Perfil</a
+                >
+                <a class="btn btn-primary my-1 mr-md-3 btn-custom"
+                  >Administrar Perfiles</a
+                >
+                <a class="btn btn-primary my-1 mr-md-3 btn-custom"
+                  >Cerrar Sesión</a
+                >
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="nombreInput1"><h2>Nombre:</h2></label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombreInput1"
+              placeholder="Juan Jos&eacute;"
+            />
+          </div>
+          <div class="form-group">
+            <label for="apellidosInput1"><h2>Apellidos:</h2></label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidosInput1"
+              placeholder="Del Castillo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="correoInput1"><h2>Correo:</h2></label>
+            <input
+              type="email"
+              class="form-control"
+              id="correoInput1"
+              aria-describedby="emailHelp"
+              placeholder="jdgcastillo@gmail.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="passInput1"><h2>Contraseña:</h2></label>
+            <input
+              type="password"
+              class="form-control"
+              id="passInput1"
+              placeholder="Password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="telefonoInput1"><h2>Teléfono:</h2></label>
+            <input
+              type="tel"
+              class="form-control"
+              id="telefonoInput1"
+              placeholder="552323098"
+            />
+          </div>
+          <label><h2>Rol:</h2></label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="rolCheckbox1"
+                value="admin"
+              />
+              <label class="form-check-label" for="rolCheckbox1"
+                ><h4>Administrador</h4></label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="rolCheckbox2"
+                value="leb"
+              />
+              <label class="form-check-label" for="rolCheckbox2"
+                ><h4>Lectura, Escritura y borrado</h4></label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="rolCheckbox3"
+                value="le"
+              />
+              <label class="form-check-label" for="rolCheckbox3"
+                ><h4>Lectura y Escritura</h4></label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="rolCheckbox4"
+                value="sl"
+              />
+              <label class="form-check-label" for="rolCheckbox4"
+                ><h4>S&oacute;lo lectura</h4></label
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="panel-footer p-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="text-uppercase">Servicio de Inventarios</h5>
+            <img src="img/logo.png" width="180" height="100" alt="Logo" />
+          </div>
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+          <div class="col-md-3 mb-md-0 mb-3">
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" target="_blank"
+                  ><h4 class="text-uppercase">Aviso de Privacidad</h4></a
+                >
+              </li>
+              <br />
+
+              <li>
+                <a href="#!" target="_blank"
+                  ><h4 class="text-uppercase">Términos de Servicio</h4></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h3 class="text-uppercase">Contáctanos</h3>
+            <br />
+            <h5>contacto@sistemadeinventarios.com</h5>
+            <br />
+            <h5>7771625945</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-2  text-center py-3">
+        © 2020 Copyright:
+        <a href="www.sistemadeinventarios.mx">sistemadeinventarios</a>
+      </div>
+    </footer>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/popper-utils.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+          $('#sidebar').toggleClass('active');
+        });
+      });
+    </script>
+  </body>
+</html>

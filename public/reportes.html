@@ -8,7 +8,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>Sistema de Inventarios - Reportes</title>
+    <title>Reportes | Sistema de Inventarios</title>
   </head>
   <body>
     <div class="dashboard-wrapper">
@@ -67,46 +67,6 @@
           </li>
           <li>
             <a
-              href="#ventasSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Ventas</a
-            >
-            <ul class="collapse list-unstyled" id="ventasSubmenu">
-              <li>
-                <a href="#">Venta 1</a>
-              </li>
-              <li>
-                <a href="#">Venta 2</a>
-              </li>
-              <li>
-                <a href="#">Venta 3</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a
-              href="#proveedoresSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Proveedores</a
-            >
-            <ul class="collapse list-unstyled" id="proveedoresSubmenu">
-              <li>
-                <a href="#">Proveedor 1</a>
-              </li>
-              <li>
-                <a href="#">Proveedor 2</a>
-              </li>
-              <li>
-                <a href="#">Proveedor 3</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a
               href="#reportesSubmenu"
               data-toggle="collapse"
               aria-expanded="false"
@@ -125,6 +85,15 @@
               </li>
             </ul>
           </li>
+          <li>
+            <a
+              href="#reportesSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Perfil</a
+            >
+          </li>
         </ul>
       </nav>
       <div id="content" class="container-fluid">
@@ -135,309 +104,261 @@
                 <i class="fas fa-bars"></i>
               </button>
               <h1 class="display-1"><strong>Reportes</strong></h1>
-              <ul class="navbar-nav ml-auto">
+              <ul class="navbar-nav ml-auto navbar-buttons">
                 <a class="btn btn-primary my-1 mr-md-3 btn-custom">Nuevo+</a>
                 <a class="btn btn-primary my-1 mr-md-3 btn-custom">Ajustes</a>
+                <form class="form-inline my-2 my-lg-0">
+                  <input
+                    class="form-control mr-sm-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input
-                  class="form-control mr-sm-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button
-                  class="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </form>
             </nav>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6 col-sm">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr scope="row">
-                  <th colspan="5" class="centered-th">Carros</th>
-                </tr>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Make</th>
-                  <th scope="col">Model</th>
-                  <th scope="col">Year</th>
-                  <th scope="col">Cost</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Honda</td>
-                  <td>Accord</td>
-                  <td>2009</td>
-                  <td>£500</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Toyota</td>
-                  <td>Camry</td>
-                  <td>2012</td>
-                  <td>£800</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Hyundai</td>
-                  <td>Elantra</td>
-                  <td>2010</td>
-                  <td>£600</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Honda</td>
-                  <td>Accord</td>
-                  <td>2009</td>
-                  <td>£500</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Toyota</td>
-                  <td>Camry</td>
-                  <td>2012</td>
-                  <td>£800</td>
-                </tr>
-              </tbody>
-            </table>
+            <canvas id="chartDefault1"></canvas>
           </div>
           <div class="col-lg-6 col-sm">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr scope="row">
-                  <th colspan="5" class="centered-th">Fruta</th>
-                </tr>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Fruta</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col">Pais</th>
-                  <th scope="col">Cost/Kg</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Manzana</td>
-                  <td>1T</td>
-                  <td>USA</td>
-                  <td>2USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Fresa</td>
-                  <td>1.5T</td>
-                  <td>Mexico</td>
-                  <td>2.5USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sandia</td>
-                  <td>0.5T</td>
-                  <td>Africa</td>
-                  <td>3USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Manzana</td>
-                  <td>1T</td>
-                  <td>USA</td>
-                  <td>2USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Fresa</td>
-                  <td>1.5T</td>
-                  <td>Mexico</td>
-                  <td>2.5USD</td>
-                </tr>
-              </tbody>
-            </table>
+            <canvas id="chartDefault2"></canvas>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6 col-sm">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr scope="row">
-                  <th colspan="5" class="centered-th">Carros</th>
-                </tr>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Make</th>
-                  <th scope="col">Model</th>
-                  <th scope="col">Year</th>
-                  <th scope="col">Cost</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Honda</td>
-                  <td>Accord</td>
-                  <td>2009</td>
-                  <td>£500</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Toyota</td>
-                  <td>Camry</td>
-                  <td>2012</td>
-                  <td>£800</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Hyundai</td>
-                  <td>Elantra</td>
-                  <td>2010</td>
-                  <td>£600</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Honda</td>
-                  <td>Accord</td>
-                  <td>2009</td>
-                  <td>£500</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Toyota</td>
-                  <td>Camry</td>
-                  <td>2012</td>
-                  <td>£800</td>
-                </tr>
-              </tbody>
-            </table>
+            <canvas id="chartDefault3"></canvas>
           </div>
-          <div class="col-6">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr scope="row">
-                  <th colspan="5" class="centered-th">Fruta</th>
-                </tr>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Fruta</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col">Pais</th>
-                  <th scope="col">Cost/Kg</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Manzana</td>
-                  <td>1T</td>
-                  <td>USA</td>
-                  <td>2USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Fresa</td>
-                  <td>1.5T</td>
-                  <td>Mexico</td>
-                  <td>2.5USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sandia</td>
-                  <td>0.5T</td>
-                  <td>Africa</td>
-                  <td>3USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Manzana</td>
-                  <td>1T</td>
-                  <td>USA</td>
-                  <td>2USD</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Fresa</td>
-                  <td>1.5T</td>
-                  <td>Mexico</td>
-                  <td>2.5USD</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-sm p-0">
-            <footer class="panel-footer">
-              <div class="container-fluid text-center text-md-left">
-                <div class="row">
-                  <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">Servicio de Inventarios</h5>
-                    <img
-                      src="img/logo.png"
-                      width="180"
-                      height="100"
-                      alt="Logo"
-                    />
-                  </div>
-
-                  <hr class="clearfix w-100 d-md-none pb-3" />
-
-                  <div class="col-md-3 mb-md-0 mb-3">
-                    <ul class="list-unstyled">
-                      <li>
-                        <a href="#!" target="_blank"
-                          ><h4 class="text-uppercase">
-                            Aviso de Privacidad
-                          </h4></a
-                        >
-                      </li>
-                      <br />
-
-                      <li>
-                        <a href="#!" target="_blank"
-                          ><h4 class="text-uppercase">
-                            Términos de Servicio
-                          </h4></a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="col-md-3 mb-md-0 mb-3">
-                    <h3 class="text-uppercase">Contáctanos</h3>
-                    <br />
-                    <h5>contacto@sistemadeinventarios.com</h5>
-                    <br />
-                    <h5>7771625945</h5>
-                  </div>
-                </div>
-              </div>
-
-              <div class="footer-2  text-center py-3">
-                © 2020 Copyright:
-                <a href="www.sistemadeinventarios.mx">sistemadeinventarios</a>
-              </div>
-            </footer>
+          <div class="col-lg-6 col-sm">
+            <canvas id="chartDefault4"></canvas>
           </div>
         </div>
       </div>
     </div>
+    <footer class="panel-footer  p-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="text-uppercase">Servicio de Inventarios</h5>
+            <img src="img/logo.png" width="180" height="100" alt="Logo" />
+          </div>
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+          <div class="col-md-3 mb-md-0 mb-3">
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" target="_blank"
+                  ><h4 class="text-uppercase">Aviso de Privacidad</h4></a
+                >
+              </li>
+              <br />
+
+              <li>
+                <a href="#!" target="_blank"
+                  ><h4 class="text-uppercase">Términos de Servicio</h4></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h3 class="text-uppercase">Contáctanos</h3>
+            <br />
+            <h5>contacto@sistemadeinventarios.com</h5>
+            <br />
+            <h5>7771625945</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-2  text-center py-3">
+        © 2020 Copyright:
+        <a href="www.sistemadeinventarios.mx">sistemadeinventarios</a>
+      </div>
+    </footer>
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/popper.js/dist/popper-utils.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/chart.js/dist/Chart.bundle.min.js"></script>
     <script>
       $(document).ready(function() {
         $('#sidebarCollapse').on('click', function() {
           $('#sidebar').toggleClass('active');
         });
+      });
+      var ctx = document.getElementById('chartDefault1').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [
+            {
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+      var ctx2 = document.getElementById('chartDefault2').getContext('2d');
+      var myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [
+            {
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+      var ctx3 = document.getElementById('chartDefault3').getContext('2d');
+      var myChart4 = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [
+            {
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+      var ctx4 = document.getElementById('chartDefault4').getContext('2d');
+      var myChart4 = new Chart(ctx4, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [
+            {
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
       });
     </script>
   </body>
