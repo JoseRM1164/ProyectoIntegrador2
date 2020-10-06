@@ -1,0 +1,23 @@
+/* External imports */
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+/* Base imports */
+@import './base/personalizacion';
+@import './base/variables';
+@import './base/mixins';
+
+/* Layout imports */
+@import './layout/dashboard';
+@import './layout/navbar';
+@import './layout/footer';
+@import './layout/sidebar';
+
+/* Pages imports */
+@import './pages/estilos';
+@import './pages/inventarios';
+
+/* Component imports */
