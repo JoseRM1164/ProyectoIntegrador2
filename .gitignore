@@ -2,9 +2,8 @@
 
 # dependencies
 /node_modules
-/client/node_modules
 /api/node_modules
-/client/.pnp
-/client/.pnp.js
 
 /.vscode
+
+/.DStore
