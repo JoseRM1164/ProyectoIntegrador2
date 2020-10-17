@@ -1,8 +1,11 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './components/views/dashboard/dashboard.component'
 
 import { HomeComponent } from './components/views/home/home.component'
-import { DashboardComponent } from './components/views/dashboard/dashboard.component'
+import { InventariosComponent } from './components/views/inventarios/inventarios.component'
+import { PerfilComponent } from './components/views/perfil/perfil.component'
+import { ReportesComponent } from './components/views/reportes/reportes.component'
 
 const routes: Routes = [
   {
@@ -15,19 +18,15 @@ const routes: Routes = [
       },
       {
         path:'inventarios',
-        component:HomeComponent
+        component: InventariosComponent
       },
       {
         path:'perfil',
-        component:HomeComponent
-      },
-      {
-        path:'menu-perfiles',
-        component:HomeComponent
+        component: PerfilComponent
       },
       {
         path:'reportes',
-        component:HomeComponent
+        component: ReportesComponent
       },
     ]
   }
