@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path:'dashboard',
-    loadChildren: './module/group/group.module#GroupModule'
+    loadChildren: './module/dashboard/dashboard.module#DashboardModule'
   },
   {
     path: '**',

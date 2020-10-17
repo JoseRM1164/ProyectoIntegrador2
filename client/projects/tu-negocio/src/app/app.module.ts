@@ -8,7 +8,7 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { NavbarIndexComponent } from './partials/navbar-index/navbar-index.component';
 import { IndexComponent } from './views/index/index.component';
 
-import { GroupModule } from './module/group/group.module';
+import { DashboardModule } from './module/dashboard/dashboard.module';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GroupModule
+    DashboardModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
