@@ -13,7 +13,16 @@ import { NavDashboardComponent } from './components/partials/nav-dashboard/nav-d
 
 
 @NgModule({
-  declarations: [DashboardComponent, SidebarComponent, HomeComponent, InventariosComponent, PerfilComponent, ReportesComponent, FooterComponent, NavDashboardComponent],
+  declarations: [
+    DashboardComponent,
+    SidebarComponent,
+    HomeComponent,
+    InventariosComponent,
+    PerfilComponent,
+    ReportesComponent,
+    FooterComponent,
+    NavDashboardComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule
