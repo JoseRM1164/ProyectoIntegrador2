@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/views/dashboard/dashboard.compo
 
 import { HomeComponent } from './components/views/home/home.component';
 import { InventariosComponent } from './components/views/inventarios/inventarios.component';
+import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
 import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
 import { PerfilComponent } from './components/views/perfil/perfil.component';
 import { ReportesComponent } from './components/views/reportes/reportes.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'inventarios',
         component: InventariosComponent
+      },
+      {
+        path: 'inventarios/item-inventario',
+        component: ItemInventarioComponent
       },
       {
         path: 'perfil',

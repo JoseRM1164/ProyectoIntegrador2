@@ -8,15 +8,15 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
 })
 export class NuevoPerfilComponent implements OnInit {
   modeloPerfil = this.formBuild.group({
-      nombrePerfil: ['', Validators.required],
-      apellidosPerfil: ['', [Validators.required]],
-      correoPerfil: ['', [Validators.required, Validators.email]],
-      passwordPerfil: ['', Validators.required, Validators.minLength(8)],
-      telefonoPerfil: [''],
-      adminCheck: [''],
-      lecturaCheck: [''],
-      escrituraCheck: [''],
-      borradoCheck: ['']
+    nombrePerfil: ['', Validators.required],
+    apellidosPerfil: ['', [Validators.required]],
+    correoPerfil: ['', [Validators.required, Validators.email]],
+    passwordPerfil: ['', Validators.required, Validators.minLength(8)],
+    telefonoPerfil: [''],
+    adminCheck: [''],
+    lecturaCheck: [''],
+    escrituraCheck: [''],
+    borradoCheck: ['']
   });
 
 
