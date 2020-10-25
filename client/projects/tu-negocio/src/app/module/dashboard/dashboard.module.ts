@@ -12,6 +12,7 @@ import { ReportesComponent } from './components/views/reportes/reportes.componen
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { NavDashboardComponent } from './components/partials/nav-dashboard/nav-dashboard.component';
 import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
+import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perf
     ReportesComponent,
     FooterComponent,
     NavDashboardComponent,
-    NuevoPerfilComponent
+    NuevoPerfilComponent,
+    ItemInventarioComponent
   ],
   imports: [
     CommonModule,
