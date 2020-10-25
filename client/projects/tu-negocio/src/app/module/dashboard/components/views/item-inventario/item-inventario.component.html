@@ -27,49 +27,57 @@
         </button>
       </div>
       <form [formGroup]="modeloProducto" (ngSubmit)="enviar()">
-      <div class="modal-body mx-3">
-        <div class="text-nowrap m-3">
-          <h2 class="text-md-left">
-            Nombre :
-            <input
-              type="text"
-              class="form-control m-4"
-              placeholder="Añadir Nombre"
-            />
-          </h2>
-          <h2 class="text-md-left">
-            Cantidad :
-            <input
-              type="text"
-              class="form-control m-4"
-              placeholder="Añadir Cantidad"
-            />
-          </h2>
-          <h2 class="text-md-left">
-            Caducidad :
-            <input
-              type="text"
-              class="form-control m-4"
-              placeholder="Añadir Caducidad"
-            />
-          </h2>
-          <h2 class="text-md-left">
-            Precio/Kg :
-            <input
-              type="text"
-              class="form-control m-4"
-              placeholder="Añadir Precio por kilo"
-            />
-          </h2>
+        <div class="modal-body mx-3">
+          <div class="text-nowrap m-3">
+            <h2 class="text-md-left">
+              Nombre :
+              <input
+                type="text"
+                formControlName="nombreProducto"
+                class="form-control m-4"
+                placeholder="Añadir Nombre"
+                required
+              />
+            </h2>
+            <h2 class="text-md-left">
+              Cantidad :
+              <input
+                type="text"
+                formControlName="cantidadProducto"
+                class="form-control m-4"
+                placeholder="Añadir Cantidad"
+                required
+              />
+            </h2>
+            <h2 class="text-md-left">
+              Caducidad :
+              <input
+                type="text"
+                formControlName="caducidadProducto"
+                class="form-control m-4"
+                placeholder="Añadir Caducidad"
+                required
+              />
+            </h2>
+            <h2 class="text-md-left">
+              Precio/Kg :
+              <input
+                type="text"
+                formControlName="precioProducto"
+                class="form-control m-4"
+                placeholder="Añadir Precio por kilo"
+                required
+              />
+            </h2>
+          </div>
         </div>
-      </div>
-        <p>Valor de form: {{ modeloProducto.value | json }}</p>
-      <div class="modal-footer d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary my-1 mr-md-3 btn-custom">
-          Agregar
-        </button>
-      </div>
-      </form>
+          <p>Valor de form: {{ modeloProducto.value | json }}</p>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary my-1 mr-md-3 btn-custom">
+            Agregar
+          </button>
+        </div>
+        </form>
     </div>
   </div>
 </div>
