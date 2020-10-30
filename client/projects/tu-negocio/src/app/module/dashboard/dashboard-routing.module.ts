@@ -20,19 +20,21 @@ const routes: Routes = [
       },
       {
         path: 'inventarios',
-        component: InventariosComponent
+        component: InventariosComponent,
       },
       {
-        path: 'inventarios/item-inventario',
+        path: 'item-inventario',
         component: ItemInventarioComponent
       },
       {
         path: 'perfil',
         component: PerfilComponent,
-      },
-      {
-        path: 'perfil/nuevo',
-        component: NuevoPerfilComponent
+        children: [
+          {
+            path: 'nuevo',
+            component: NuevoPerfilComponent
+          },
+        ]
       },
       {
         path: 'reportes',
