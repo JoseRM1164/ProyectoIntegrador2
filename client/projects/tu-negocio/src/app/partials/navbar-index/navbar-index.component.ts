@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+declare let $: any;
 @Component({
   selector: 'app-navbar-index',
   templateUrl: './navbar-index.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarIndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  btnLogInClick() {
+    this.router.navigateByUrl('/dashboard');
+    $('#LogInModal').modal('hide');
   }
 
 }
