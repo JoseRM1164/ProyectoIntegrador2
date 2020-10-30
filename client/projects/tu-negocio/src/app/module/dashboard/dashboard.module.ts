@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
@@ -13,6 +15,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { NavDashboardComponent } from './components/partials/nav-dashboard/nav-dashboard.component';
 import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
 import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
+import { DashboardService } from './services/dashboard.service';
 
 
 @NgModule({
@@ -31,7 +34,14 @@ import { ItemInventarioComponent } from './components/views/item-inventario/item
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+
+    // HttpClientInMemoryModule itercepts HTTP reequests
+    // Remove it when a real serve is ready to receive requests
+    HttpClientInMemoryWebApiModule.forRoot(
+      DashboardService, { dataEncapsulation: false }
+    )
   ],
 })
 export class DashboardModule { }

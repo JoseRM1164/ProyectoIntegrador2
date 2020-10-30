@@ -1,4 +1,5 @@
 export interface Perfil {
+  id: number;
   nombre: string;
   apellidos: string;
   correo: string;
@@ -9,17 +10,3 @@ export interface Perfil {
   escritura: boolean;
   borrado: boolean;
 }
-
-export const PERFILES = [
-  {
-    nombre: 'Jose',
-    apellidos: 'Martinez',
-    correo: 'j.velez@itesm.mx',
-    contrasena: '1234',
-    telefono: '12345657',
-    admin: true,
-    lectura: true,
-    escritura: true,
-    borrado: true
-  }
-];
