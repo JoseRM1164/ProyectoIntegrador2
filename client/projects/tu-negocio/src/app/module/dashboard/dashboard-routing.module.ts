@@ -8,6 +8,7 @@ import { ItemInventarioComponent } from './components/views/item-inventario/item
 import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
 import { PerfilComponent } from './components/views/perfil/perfil.component';
 import { ReportesComponent } from './components/views/reportes/reportes.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {
