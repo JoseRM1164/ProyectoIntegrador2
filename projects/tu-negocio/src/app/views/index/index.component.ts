@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-
 import {trigger, state, style, animate, transition} from '@angular/animations';
+
+declare let $: any;
 
 @Component({
   selector: 'app-index',
@@ -33,5 +34,9 @@ export class IndexComponent implements OnInit {
 
   toggle() {
     this.showing = !this.showing;
+  }
+
+  ngAfterViewInit() {
+    $("video").prop('muted', true);
   }
 }

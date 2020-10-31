@@ -1,5 +1,6 @@
 {
   "INDEX" : {
+    "bTEST": "Comienza tu prueba",
     "TITLE": "Sistema de inventarios",
     "SUBTITLE": "Controla tu negocio desde cualquier lugar!",
     "FUNCTITLE": "Tus inventarios en la palma de tu mano",
@@ -16,6 +17,8 @@
     "SECURITYINFO": "Todos tus datos estarán seguros gracias al respaldo y cifrado en nuestra base de datos.",
     "CONTACT": "Contáctanos",
     "MESSAGE": "Escribe tu mensaje",
+    "bFORM": "Enviar",
+    "bPOPUPTEXT": "Su mensaje a sido enviado",
     "BYE":"Estamos para servirte:",
     "PRIVACY":  "Aviso de privasidad",
     "CONDITIONS":  "contacto@sistemadeinventarios.com"
