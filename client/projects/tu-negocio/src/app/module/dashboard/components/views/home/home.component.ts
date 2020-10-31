@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { InventariosService } from '../../../services/inventarios.service';
+import { Inventario } from '../../../../../models/inventario';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  inventarios: Inventario[];
 
-  constructor() { }
+  constructor(private inventariosService: InventariosService) {
+    this.inventarios = [];
+  }
 
   ngOnInit(): void {
+    this.getInventarios();
   }
 
   public chartOptions = { responsive: true };
@@ -21,5 +28,11 @@ export class HomeComponent implements OnInit {
   ];
 
   public chartLabels = ['January', 'February', 'Mars', 'April'];
+
+  getInventarios(): void {
+    this.inventariosService
+      .getInventarios()
+      .subscribe(inventarios => (this.inventarios = inventarios));
+  }
 
 }

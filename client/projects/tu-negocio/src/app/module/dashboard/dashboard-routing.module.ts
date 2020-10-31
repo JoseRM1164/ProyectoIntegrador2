@@ -7,6 +7,7 @@ import { InventariosComponent } from './components/views/inventarios/inventarios
 import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
 import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
 import { PerfilComponent } from './components/views/perfil/perfil.component';
+import { MiPerfilComponent } from './components/views/mi-perfil/mi-perfil.component';
 import { ReportesComponent } from './components/views/reportes/reportes.component';
 import { from } from 'rxjs';
 
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'item-inventario',
         component: ItemInventarioComponent
+      },
+      {
+        path: 'mi-perfil',
+        component: MiPerfilComponent,
       },
       {
         path: 'perfil',
