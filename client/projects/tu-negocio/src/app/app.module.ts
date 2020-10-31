@@ -31,6 +31,7 @@ import { IndexCarouselComponent } from './partials/index-carousel/index-carousel
     AppRoutingModule,
     FormsModule,
     DashboardModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="mr-auto">
-        <h1 class="display-1"><strong>Nuevo Perfil</strong></h1>
+        <h1 class="display-1"><strong>Mi Perfil</strong></h1>
       </div>
     </nav>
   </div>
@@ -19,7 +19,7 @@
       formControlName="nombrePerfil"
       class="form-control"
       id="nombreInput1"
-      placeholder="Añadir Nombre"
+      value="{{miperfil.nombre}}"
       required
     />
   </div>
@@ -30,7 +30,7 @@
       formControlName="apellidosPerfil"
       class="form-control"
       id="apellidosInput1"
-      placeholder="Añadir Apellidos"
+      value="{{miperfil.apellidos}}"
       required
     />
   </div>
@@ -41,7 +41,7 @@
       formControlName="correoPerfil"
       class="form-control"
       id="correoInput1"
-      placeholder="Añadir Correo Electr&oacute;nico"
+      value="{{miperfil.correo}}"
       required
     />
   </div>
@@ -52,7 +52,7 @@
       formControlName="passwordPerfil"
       class="form-control"
       id="passInput1"
-      placeholder="Añadir contraseña con 8 d&iacute;gitos"
+      value="{{miperfil.password}}"
       required
     />
   </div>
@@ -63,7 +63,7 @@
       formControlName="telefonoPerfil"
       class="form-control"
       id="telefonoInput1"
-      placeholder="Añadir n&uacute;mero telef&oacute;nico de 10 d&iacute;gitos"
+      value="{{miperfil.telefono}}"
       required
     />
   </div>
@@ -124,5 +124,5 @@
       </h4>
     </div>
   </div>
-  <button class="btn-custom btn-lg" type="submit">Submit</button>
+  <button class="btn-custom btn-lg" subtype="submit">Submit</button>
 </form>

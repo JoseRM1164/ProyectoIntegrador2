@@ -1,7 +1,6 @@
 <div class="dashboard-wrapper">
   <app-sidebar></app-sidebar>
   <div class="container-fluid">
-    <app-nav-dashboard></app-nav-dashboard>
     <div [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
   </div>

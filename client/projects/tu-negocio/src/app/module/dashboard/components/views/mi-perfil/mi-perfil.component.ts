@@ -6,11 +6,13 @@ import { PerfilesService } from '../../../services/perfiles.service';
 import { Perfil } from '../../../../../models/perfil';
 
 @Component({
-  selector: 'app-nuevo-perfil',
-  templateUrl: './nuevo-perfil.component.html',
-  styleUrls: ['./nuevo-perfil.component.scss']
+  selector: 'app-mi-perfil',
+  templateUrl: './mi-perfil.component.html',
+  styleUrls: ['./mi-perfil.component.scss']
 })
-export class NuevoPerfilComponent implements OnInit {
+export class MiPerfilComponent implements OnInit {
+  miperfil: Perfil;
+
   modeloPerfil = this.formBuild.group({
     nombrePerfil: ['', Validators.required],
     apellidosPerfil: ['', [Validators.required]],
@@ -23,14 +25,33 @@ export class NuevoPerfilComponent implements OnInit {
     borradoCheck: ['']
   });
 
-
   constructor(
     private formBuild: FormBuilder,
-    private perfilesService: PerfilesService, 
+    private perfilesService: PerfilesService,
     private router: Router
-  ) { }
+  ) {
+    this.miperfil = {
+      id: 0,
+      nombre: '',
+      apellidos: '',
+      correo: '',
+      password: '',
+      telefono: '',
+      admin: '',
+      lectura: '',
+      escritura: '',
+      borrado: ''
+    };
+  }
 
   ngOnInit(): void {
+    this.getMiPerfil();
+  }
+
+  getMiPerfil(): void {
+    this.perfilesService
+      .getPerfil(1)
+      .subscribe(perfil => (this.miperfil = perfil));
   }
 
   enviar() {
@@ -46,8 +67,7 @@ export class NuevoPerfilComponent implements OnInit {
       escritura: String(this.modeloPerfil.value.escrituraCheck),
       borrado: String(this.modeloPerfil.value.borradoCheck)
     };
-    this.perfilesService.addPerfil(nuevoPerfil);
+    this.perfilesService.updatePerfil(nuevoPerfil);
     this.router.navigateByUrl('/dashboard/perfil');
   }
 }
-
