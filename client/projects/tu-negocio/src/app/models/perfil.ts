@@ -3,10 +3,10 @@ export interface Perfil {
   nombre: string;
   apellidos: string;
   correo: string;
-  contrasena: string;
+  password: string;
   telefono: string;
-  admin: boolean;
-  lectura: boolean;
-  escritura: boolean;
-  borrado: boolean;
+  admin: string;
+  lectura: string;
+  escritura: string;
+  borrado: string;
 }

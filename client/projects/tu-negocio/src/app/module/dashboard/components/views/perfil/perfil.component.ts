@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PerfilesService } from '../../../services/perfiles.service';
-
 import { Perfil } from '../../../../../models/perfil';
 
 @Component({
