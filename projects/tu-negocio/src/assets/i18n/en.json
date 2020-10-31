@@ -1,5 +1,6 @@
 {
   "INDEX" : {
+    "bTEST": "Start your free trial",
     "TITLE": "Sistema de Invertarios",
     "SUBTITLE": "Control your business from anywhere!",
     "FUNCTITLE": "Your inventories on the palm of your hand",
@@ -16,6 +17,8 @@
     "SECURITYINFO": "All your data will be safe thanks to our database backup and encryption",
     "CONTACT": "Contact us",
     "MESSAGE": "Send us a message:",
+    "bFORM": "Send",
+    "bPOPUPTEXT": "You're message has been send",
     "BYE":  "We're here to serve",
     "PRIVACY":  "Notice of Privacy",
     "CONDITIONS":  "Terms of use"

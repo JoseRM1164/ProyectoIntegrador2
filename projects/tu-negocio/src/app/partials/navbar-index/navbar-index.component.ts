@@ -18,6 +18,7 @@ export class NavbarIndexComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    $("html").attr("lang", this.translate.getBrowserLang() ); 
   }
 
   btnLogInClick() {
@@ -27,7 +28,7 @@ export class NavbarIndexComponent implements OnInit {
 
   switchLang(lang: string) {
     this.translate.use(lang);
-    console.log(lang);
+    $("html").attr("lang", lang);
   }
 
 }
