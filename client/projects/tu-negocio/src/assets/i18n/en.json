@@ -1,0 +1,22 @@
+{
+  "INDEX" : {
+    "TITLE": "Hello",
+    "SUBTITLE": "1",
+    "FUNCTITLE": "1",
+    "FUNC1": "1",
+    "FUNC2": "1",
+    "FUNC3": "1",
+    "FUNC4": "1",
+    "TITLECAROUSEL": "1",
+    "CLOUD": "1",
+    "CLOUDINFO": "1",
+    "TRUCK": "1",
+    "TRUCKINFO": "1",
+    "SECURITY": "1",
+    "SECURITYINFO": "1",
+    "CONTACT": "1",
+    "BYE":  "1",
+    "PRIVACY":  "1",
+    "CONDITIONS":  "1"
+  }
+}

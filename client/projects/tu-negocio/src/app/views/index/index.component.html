@@ -13,9 +13,9 @@
     <div class="video-background-content container h-100">
       <div class="d-flex h-100 text-center align-items-center">
         <div class="w-100 text-white">
-          <h1 class="display-4">Sistema de Inventarios</h1>
+          <h1 class="display-4"> {{ 'INDEX.TITLE' | translate }}</h1>
           <p class="lead mb-0">
-            ¡Controla tu negocio desde cualquier lugar!
+            {{ 'INDEX.SUBTITLE' | translate }}
           </p>
         </div>
       </div>
@@ -34,23 +34,23 @@
         />
       </div>
       <div class="col-lg-6 col-xs mt-5" id="Funciones">
-        <h3 class="text-center">Tus inventarios en la palma de la mano</h3>
+        <h3 class="text-center">{{ 'INDEX.FUNCTITLE' | translate }}</h3>
         <ul class="mt-5 list-1section fa-ul">
           <li>
-            <span class="fa-li"><i class="fas fa-box-open"></i></span>Fácil
-            acceso a sus diferentes inventarios.
+            <span class="fa-li"><i class="fas fa-box-open"></i></span>
+            {{ 'INDEX.FUNC1' | translate }}
           </li>
           <li>
             <span class="fa-li"><i class="fas fa-box-open"></i></span
-            >Control de movimento de mercancía.
+            >{{ 'INDEX.FUNC2' | translate }}
           </li>
           <li>
             <span class="fa-li"><i class="fas fa-box-open"></i></span
-            >Soporte para multiples almacenes.
+            >{{ 'INDEX.FUNC3' | translate }}
           </li>
           <li>
             <span class="fa-li"><i class="fas fa-box-open"></i></span
-            >Estadísticas detalladas por almacen
+            >{{ 'INDEX.FUNC4' | translate }}
           </li>
         </ul>
       </div>
@@ -61,33 +61,30 @@
     <div class="row text-center mt-5">
       <div class="col-lg-4 col-xs">
         <i class="fab fa-cloudversify fa-10x"></i>
-        <h2>La nube</h2>
+        <h2>{{ 'INDEX.CLOUD' | translate }}</h2>
         <p>
-          Accede a tu negocio desde cualqueir parte del mundo , solo
-          accediendo a nuestro sistema a través de la web
+          {{ 'INDEX.CLOUDINFO' | translate }}
         </p>
       </div>
       <div class="col-lg-4 col-xs">
         <i class="fas fa-truck-moving fa-10x"></i>
-        <h2>Control desde el inicio</h2>
+        <h2>{{ 'INDEX.TRUCK' | translate }}</h2>
         <p>
-          Podrás tener el control de las cantidades de productos y las
-          ventas registradas sobre ellas
+          {{ 'INDEX.TRUCKINFO' | translate }}
         </p>
       </div>
       <div class="col-lg-4 col-xs">
         <i class="fas fa-user-shield fa-10x"></i>
-        <h2>Seguridad por delante</h2>
+        <h2>{{ 'INDEX.SECURITY' | translate }}</h2>
         <p>
-          Todos tus datos estarán seguros gracias al respaldo y cifrado en
-          nuestra base de datos.
+          {{ 'INDEX.SECURITYINFO' | translate }}
         </p>
       </div>
     </div>
 
     <div class="row px-lg-5 py-lg-5 contact-us" id="Contacto">
       <div class="col-lg-6 col-xs">
-        <h2 class="text-center">Contáctanos</h2>
+        <h2 class="text-center">{{ 'INDEX.CONTACT' | translate }}</h2>
         <form>
           <div class="form-group">
             <input
@@ -97,8 +94,7 @@
               placeholder="Ingrese su Email"
             />
             <small id="emailHelp" class="form-text text-muted"
-              >Sistema de Inventarios nunca comparte tu correo con nadie
-              más.</small
+              >{{ 'INDEX.PRIVACY' | translate }}</small
             >
           </div>
           <div class="form-group">
@@ -110,7 +106,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="mensajeTextArea">Escribe tu mensaje</label>
+            <label for="mensajeTextArea">{{ 'INDEX.MESSAGE' | translate }}</label>
             <textarea
               id="mensajeTextArea"
               rows="3"
@@ -120,9 +116,9 @@
         </form>
       </div>
       <div class="col-lg-6 col-xs text-center m-auto">
-        <h2>Sistema de Inventarios</h2>
+        <h2>{{ 'INDEX.TITLE' | translate }}</h2>
         <h4>
-          Estamos para servirte: <br />
+          {{ 'INDEX.BYE' | translate }} <br />
           tel: 5511111111 <br />
           email: contacto@sistemadeinventarios.com
         </h4>
