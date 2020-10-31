@@ -1,48 +1,58 @@
 {
-  "name": "tunegocioweb",
-  "version": "1.0.0",
-  "description": "Proyecto para la clase de desarrollo web",
-  "main": "index.js",
+  "name": "client",
+  "version": "0.5.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css",
-    "watch-css": "nodemon -e scss -x  \"npm run build-css\""
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DIODERFOOL/TuNegocioWeb.git"
-  },
-  "keywords": [
-    "MongoDB",
-    "Angular",
-    "Express",
-    "Passport",
-    "SASS",
-    "HTML",
-    "CSS"
-  ],
-  "author": "Fall Guys Web",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DIODERFOOL/TuNegocioWeb/issues"
-  },
-  "homepage": "https://github.com/DIODERFOOL/TuNegocioWeb#readme",
+  "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@angular/animations": "~10.1.4",
+    "@angular/common": "~10.1.4",
+    "@angular/compiler": "~10.1.4",
+    "@angular/core": "~10.1.4",
+    "@angular/forms": "~10.1.4",
+    "@angular/platform-browser": "~10.1.4",
+    "@angular/platform-browser-dynamic": "~10.1.4",
+    "@angular/router": "~10.1.4",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
+    "@popperjs/core": "^2.5.3",
+    "angular-in-memory-web-api": "^0.11.0",
     "bootstrap": "^4.5.2",
     "chart.js": "^2.9.4",
+    "datatables.net": "^1.10.22",
     "datatables.net-bs4": "^1.10.22",
     "jquery": "^3.5.1",
     "ng2-charts": "^2.4.2",
-    "popper.js": "^1.16.1"
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.14.1",
-    "nodemon": "^2.0.4",
-    "stylelint": "^13.7.1",
-    "stylelint-config-standard": "^20.0.0",
-    "watch": "^1.0.2"
+    "@angular-devkit/build-angular": "^0.1001.7",
+    "@angular/cli": "^10.1.6",
+    "@angular/compiler-cli": "~10.1.4",
+    "@angular/localize": "^10.1.4",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
   }
 }
