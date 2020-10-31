@@ -15,18 +15,22 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    data: { animation: 'SideBPage'},
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        data: { animation: 'HomePage'}
       },
       {
         path: 'inventarios',
         component: InventariosComponent,
+        data: { animation: 'ToDashboard'}
       },
       {
         path: 'item-inventario',
-        component: ItemInventarioComponent
+        component: ItemInventarioComponent,
+        data: { animation: 'SideBPage'}
       },
       {
         path: 'mi-perfil',
@@ -35,14 +39,17 @@ const routes: Routes = [
       {
         path: 'perfil',
         component: PerfilComponent,
+        data: { animation: 'SideBPage'}
       },
       {
         path: 'nuevo-perfil',
-        component: NuevoPerfilComponent
+        component: NuevoPerfilComponent,
+        data: { animation: 'ToDashboard'}
       },
       {
         path: 'reportes',
-        component: ReportesComponent
+        component: ReportesComponent,
+        data: { animation: 'SideBPage'}
       }
     ]
   }

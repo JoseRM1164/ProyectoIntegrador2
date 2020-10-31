@@ -7,15 +7,18 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 const routes: Routes = [
   {
     path:'', 
-    component:IndexComponent
+    component:IndexComponent,
+    data: { animation: 'HomePage' }
   },
   {
     path:'dashboard',
-    loadChildren: './module/dashboard/dashboard.module#DashboardModule'
+    loadChildren: './module/dashboard/dashboard.module#DashboardModule',
+    data: { animation: 'ToDashboard'}
   },
   {
     path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
+    data: { animation: 'NotFoundPage' }
   }
 ];
 
