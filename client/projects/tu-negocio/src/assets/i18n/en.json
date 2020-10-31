@@ -15,6 +15,7 @@
     "SECURITY": "1",
     "SECURITYINFO": "1",
     "CONTACT": "1",
+    "MESSAGE": "1",
     "BYE":  "1",
     "PRIVACY":  "1",
     "CONDITIONS":  "1"
