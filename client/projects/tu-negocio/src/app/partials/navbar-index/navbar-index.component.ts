@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 declare let $: any;
 @Component({
@@ -9,7 +10,12 @@ declare let $: any;
 })
 export class NavbarIndexComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public translate: TranslateService) { 
+    translate.addLangs(['es', 'en']);
+    translate.setDefaultLang('es');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|es/) ? browserLang : 'es'); 
+  }
 
   ngOnInit(): void {
   }
@@ -17,6 +23,11 @@ export class NavbarIndexComponent implements OnInit {
   btnLogInClick() {
     this.router.navigateByUrl('/dashboard');
     $('#LogInModal').modal('hide');
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
+    console.log(lang);
   }
 
 }
