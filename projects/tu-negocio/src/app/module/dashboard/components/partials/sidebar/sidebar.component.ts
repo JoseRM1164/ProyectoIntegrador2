@@ -21,13 +21,13 @@ import {
       state(
         'open',
         style({
-          backgroundColor: 'green'
+          backgroundColor: '#006B38FF'
         })
       ),
       state(
         'close',
         style({
-          backgroundColor: 'blue'
+          backgroundColor: '#57A0D3'
         })
       ),
       transition('* => *', [animate('2s')])
