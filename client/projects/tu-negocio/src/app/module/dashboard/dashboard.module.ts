@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ChartsModule } from 'ng2-charts';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
@@ -38,6 +39,7 @@ import { SingleInventarioComponent } from './components/partials/single-inventar
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    ChartsModule,
     ReactiveFormsModule,
     HttpClientModule,
 

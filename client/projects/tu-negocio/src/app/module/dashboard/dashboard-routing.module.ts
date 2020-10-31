@@ -9,6 +9,7 @@ import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perf
 import { PerfilComponent } from './components/views/perfil/perfil.component';
 import { MiPerfilComponent } from './components/views/mi-perfil/mi-perfil.component';
 import { ReportesComponent } from './components/views/reportes/reportes.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
         component: PerfilComponent,
       },
       {
-        path: 'perfil/nuevo',
+        path: 'nuevo-perfil',
         component: NuevoPerfilComponent
       },
       {
