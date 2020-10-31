@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-lg-6 col-sm">
-    <p>Graph1</p>
-    <canvas id="chartDefault1"></canvas>
+    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
+    [chartType]="'bar'"></canvas>
   </div>
   <div class="col-lg-6 col-sm">
-    <p>Graph2</p>
-    <canvas id="chartDefault2"></canvas>
+    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
+      [chartType]="'bar'"></canvas>
   </div>
 </div>
 <div class="row">
