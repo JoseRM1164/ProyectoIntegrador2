@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { PerfilesService } from '../../../services/perfiles.service';
 import { Perfil } from '../../../../../models/perfil';
 
+declare let $: any;
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -17,6 +18,10 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPerfiles();
+  }
+
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
   }
 
   getPerfiles(): void {

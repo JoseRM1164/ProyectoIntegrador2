@@ -32,9 +32,15 @@ export class ItemInventarioComponent implements OnInit {
     this.getInventario();
   }
 
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
+  }
+
+
   getInventario(): void {
-    this.inventariosService.getInventarios()
-      .subscribe(inventarios => this.inventario = inventarios[0]);
+    this.inventariosService
+      .getInventarios()
+      .subscribe(inventarios => (this.inventario = inventarios[0]));
   }
 
   enviar() {
@@ -43,11 +49,10 @@ export class ItemInventarioComponent implements OnInit {
       nombre: String(this.modeloProducto.value.nombreProducto),
       cantidad: Number(this.modeloProducto.value.cantidadProducto),
       caducidad: String(this.modeloProducto.value.caducidadProducto),
-      precio: Number(this.modeloProducto.value.precioProducto),
+      precio: Number(this.modeloProducto.value.precioProducto)
     };
     this.inventario.productos.push(nuevoProducto);
     this.inventariosService.updateInventario(this.inventario);
     $('#ProductoModal').modal('hide');
   }
-
 }

@@ -20,6 +20,10 @@ export class InventariosComponent implements OnInit {
     this.getInventarios();
   }
 
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
+  }
+
   getInventarios(): void {
     this.inventariosService
       .getInventarios()
