@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,10 +8,9 @@ declare let $: any;
   templateUrl: './navbar-index.component.html',
   styleUrls: ['./navbar-index.component.scss']
 })
-export class NavbarIndexComponent implements OnInit, OnDestroy {
+export class NavbarIndexComponent implements OnInit {
 
-
-  constructor(private router: Router, public translate: TranslateService, private el: ElementRef) { 
+  constructor(private router: Router, public translate: TranslateService) { 
     translate.addLangs(['es', 'en']);
     translate.setDefaultLang('es');
     const browserLang = translate.getBrowserLang();
@@ -20,10 +19,6 @@ export class NavbarIndexComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     $("html").attr("lang", this.translate.getBrowserLang() ); 
-  }
-
-  ngOnDestroy(): void {
-
   }
 
   btnLogInClick() {
