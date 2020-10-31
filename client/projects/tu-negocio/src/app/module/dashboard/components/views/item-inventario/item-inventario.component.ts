@@ -5,6 +5,7 @@ import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
 import { Producto } from '../../../../../models/producto';
 
+declare let $: any;
 @Component({
   selector: 'app-item-inventario',
   templateUrl: './item-inventario.component.html',
@@ -46,6 +47,7 @@ export class ItemInventarioComponent implements OnInit {
     };
     this.inventario.productos.push(nuevoProducto);
     this.inventariosService.updateInventario(this.inventario);
+    $('#ProductoModal').modal('hide');
   }
 
 }
