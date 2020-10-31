@@ -25,7 +25,7 @@ export class PerfilesService {
   }
 
   getPerfil(id: number): Observable<Perfil> {
-    const url = `$(this.perfilesUrl)/${id}`;
+    const url = `${this.perfilesUrl}/${id}`;
     return this.http.get<Perfil>(url).pipe(
       catchError(this.handleError<Perfil>(`getPerfil id${id}`))
     );

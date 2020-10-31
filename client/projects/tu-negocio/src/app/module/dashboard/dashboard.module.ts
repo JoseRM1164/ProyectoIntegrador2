@@ -16,6 +16,7 @@ import { NavDashboardComponent } from './components/partials/nav-dashboard/nav-d
 import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
 import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
 import { DashboardService } from './services/dashboard.service';
+import { MiPerfilComponent } from './components/views/mi-perfil/mi-perfil.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DashboardService } from './services/dashboard.service';
     FooterComponent,
     NavDashboardComponent,
     NuevoPerfilComponent,
-    ItemInventarioComponent
+    ItemInventarioComponent,
+    MiPerfilComponent
   ],
   imports: [
     CommonModule,
