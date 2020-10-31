@@ -1,4 +1,7 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: red;">
+  <span class="badge badge-danger">BETA</span>
+</nav>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="top: 34px;">
   <a class="navbar-brand" href="#">
     <img src="../../../assets/img/logo.png" width="100" height="50" alt="Logo" />
   </a>
@@ -31,9 +34,10 @@
         <a class="nav-link" href="#Contacto">Contacto</a>
       </li>
       <li class="nav-item dropdown my-1">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Idioma
+          <i class="fas fa-caret-down"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" (click)="switchLang('en')">EN</a>
@@ -47,9 +51,6 @@
       </li>
     </ul>
   </div>
-</nav>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="top: 76px; background-color: red;">
-  <span class="badge badge-danger">BETA</span>
 </nav>
 
 <!--Log In y Registro popups-->

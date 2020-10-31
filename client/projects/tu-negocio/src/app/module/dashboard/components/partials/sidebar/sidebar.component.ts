@@ -19,27 +19,33 @@ import {
   animations: [
     trigger('childAnimation', [
       state(
-        'welcome',
+        'open',
         style({
-          backgroundColor: 'purple'
+          backgroundColor: 'green'
         })
       ),
       state(
         'close',
         style({
-          opacity: 1,
-          backgroundColor: 'white'
+          backgroundColor: 'blue'
         })
       ),
-      transition('welcome => close', [animate('3s')])
-    ])
+      transition('* => *', [animate('2s')])
+    ]),
   ]
 })
 export class SidebarComponent implements OnInit {
 
+  animated =  false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleAnim() {
+    console.log('Toggle anim');
+    this.animated = !this.animated;
   }
 
 }

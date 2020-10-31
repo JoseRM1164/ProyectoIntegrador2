@@ -46,7 +46,7 @@ import { SingleInventarioComponent } from './components/partials/single-inventar
     // HttpClientInMemoryModule itercepts HTTP reequests
     // Remove it when a real serve is ready to receive requests
     HttpClientInMemoryWebApiModule.forRoot(
-      DashboardService, { dataEncapsulation: false }
+      DashboardService, { dataEncapsulation: false, passThruUnknownUrl: true }
     )
   ],
 })
