@@ -111,6 +111,10 @@
               rows="3"
               class="form-control"
             ></textarea>
+            <button class="btn-custom" (click)="toggle()">Enviar</button>
+            <div [@popOverState] = "showing ? 'show' : 'hide'">
+              <p> Su contacto fue enviado </p>
+          </div>
           </div>
         </form>
       </div>
