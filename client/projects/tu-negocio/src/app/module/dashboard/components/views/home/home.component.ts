@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
 
+declare let $: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,6 +18,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInventarios();
+  }
+
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
   }
 
   public chartOptions = { responsive: true };

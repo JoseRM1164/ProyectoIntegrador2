@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { PerfilesService } from '../../../services/perfiles.service';
 import { Perfil } from '../../../../../models/perfil';
 
+declare let $: any;
 @Component({
   selector: 'app-nuevo-perfil',
   templateUrl: './nuevo-perfil.component.html',
@@ -31,6 +32,10 @@ export class NuevoPerfilComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
   }
 
   enviar() {

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { PerfilesService } from '../../../services/perfiles.service';
 import { Perfil } from '../../../../../models/perfil';
 
+declare let $: any;
 @Component({
   selector: 'app-mi-perfil',
   templateUrl: './mi-perfil.component.html',
@@ -46,6 +47,10 @@ export class MiPerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMiPerfil();
+  }
+
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
   }
 
   getMiPerfil(): void {

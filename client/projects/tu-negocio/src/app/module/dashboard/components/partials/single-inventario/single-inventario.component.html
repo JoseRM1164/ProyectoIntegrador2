@@ -1,7 +1,7 @@
 <div class="card text-center ">
   <div class="card-body">
     <h5 class="card-title">I #{{inventario.id}}</h5>
-    <table class="table table-sm table-responsive">
+    <table class="table table-responsive">
       <thead class="thead-dark">
         <tr>
           <th colspan="5" class="centered-th">Carros</th>
@@ -16,11 +16,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let producto of inventario.productos | slice:0:4;">
-          <th scope="row">{{ producto.id }}</th>
-          <td>{{ producto.nombre }}</td>
-          <td>{{ producto.cantidad }}</td>
-          <td>{{ producto.caducidad }}</td>
-          <td>{{ producto.precio }}</td>
+          <th scope="row" class="text-nowrap">{{ producto.id }}</th>
+          <td class="text-nowrap">{{ producto.nombre }}</td>
+          <td class="text-nowrap">{{ producto.cantidad }}</td>
+          <td class="text-nowrap">{{ producto.caducidad }}</td>
+          <td class="text-nowrap">{{ producto.precio }}</td>
         </tr>
       </tbody>
     </table>

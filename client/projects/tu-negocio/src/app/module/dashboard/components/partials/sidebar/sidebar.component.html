@@ -1,18 +1,20 @@
 <nav id="sidebar">
+  <div [@childAnimation]="animated ? 'open' : 'close'">
   <div class="sidebar-header">
     <a class="navbar-brand" href="#">
       <img src="../../../../../../assets/img/logo.png" width="210" height="105" alt="Logo" />
     </a>
   </div>
+  </div>
   <ul class="list-unstyled components">
     <li class="active">
-      <a routerLink="/dashboard">Home</a>
+      <a routerLink="/dashboard" (click)="toggleAnim()">Home</a>
     </li>
     <li>
-      <a routerLink="./inventarios"aria-expanded="false">Inventarios</a>
+      <a routerLink="./inventarios"aria-expanded="false" (click)="toggleAnim()">Inventarios</a>
     </li>
     <li>
-      <a routerLink="./reportes" aria-expanded="false">Reportes</a>
+      <a routerLink="./reportes" aria-expanded="false" (click)="toggleAnim()">Reportes</a>
     </li>
     <li>
       <a
@@ -20,6 +22,7 @@
         data-toggle="collapse"
         aria-expanded="false"
         class="dropdown-toggle"
+        (click)="toggleAnim()"
         >Perfil</a
       >
       <ul class="collapse list-unstyled" id="reportesSubmenu">

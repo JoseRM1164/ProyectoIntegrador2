@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+declare let $: any;
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.component.html',
@@ -10,6 +11,10 @@ export class ReportesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
   }
 
   public chartOptions = { responsive: true };

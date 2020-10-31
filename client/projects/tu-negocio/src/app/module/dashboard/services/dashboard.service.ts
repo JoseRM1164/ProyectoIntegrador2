@@ -497,6 +497,172 @@ export class DashboardService implements InMemoryDbService {
             precio: '$205.20'
           }
         ]
+      },
+      {
+        id: 4,
+        productos: [
+          {
+            id: 1,
+            nombre: 'Oysters - Smoked',
+            cantidad: 275,
+            caducidad: '15/10/2021',
+            precio: '$300.70'
+          },
+          {
+            id: 2,
+            nombre: 'Peppercorns - Pink',
+            cantidad: 171,
+            caducidad: '10/12/2020',
+            precio: '$20.94'
+          },
+          {
+            id: 3,
+            nombre: 'Oyster - In Shell',
+            cantidad: 45,
+            caducidad: '01/07/2021',
+            precio: '$294.15'
+          },
+          {
+            id: 4,
+            nombre: 'Longos - Grilled Veg Sandwiches',
+            cantidad: 123,
+            caducidad: '24/11/2021',
+            precio: '$449.29'
+          },
+          {
+            id: 5,
+            nombre: 'Chocolate - Pistoles, White',
+            cantidad: 64,
+            caducidad: '09/04/2022',
+            precio: '$288.47'
+          },
+          {
+            id: 6,
+            nombre: 'Bread - Burger',
+            cantidad: 172,
+            caducidad: '24/04/2022',
+            precio: '$398.99'
+          },
+          {
+            id: 7,
+            nombre: 'Kiwano',
+            cantidad: 117,
+            caducidad: '24/01/2021',
+            precio: '$316.03'
+          },
+          {
+            id: 8,
+            nombre: 'Chicken Breast Wing On',
+            cantidad: 87,
+            caducidad: '16/10/2021',
+            precio: '$273.00'
+          },
+          {
+            id: 9,
+            nombre: 'Cake - Box Window 10x10x2.5',
+            cantidad: 123,
+            caducidad: '20/11/2020',
+            precio: '$117.82'
+          },
+          {
+            id: 10,
+            nombre: 'Chips - Doritos',
+            cantidad: 251,
+            caducidad: '23/10/2021',
+            precio: '$19.64'
+          },
+          {
+            id: 11,
+            nombre: 'Rice - Brown',
+            cantidad: 173,
+            caducidad: '20/02/2022',
+            precio: '$445.31'
+          },
+          {
+            id: 12,
+            nombre: 'Wine - Saint Emilion Calvet',
+            cantidad: 171,
+            caducidad: '09/05/2022',
+            precio: '$296.46'
+          },
+          {
+            id: 13,
+            nombre: '7up Diet, 355 Ml',
+            cantidad: 295,
+            caducidad: '07/03/2022',
+            precio: '$110.25'
+          },
+          {
+            id: 14,
+            nombre: 'Blouse / Shirt / Sweater',
+            cantidad: 78,
+            caducidad: '07/12/2020',
+            precio: '$135.21'
+          },
+          {
+            id: 15,
+            nombre: 'Wine - Shiraz South Eastern',
+            cantidad: 55,
+            caducidad: '09/06/2021',
+            precio: '$166.03'
+          },
+          {
+            id: 16,
+            nombre: 'Beer - Paulaner Hefeweisse',
+            cantidad: 226,
+            caducidad: '23/01/2022',
+            precio: '$316.81'
+          },
+          {
+            id: 17,
+            nombre: 'Rice - Wild',
+            cantidad: 185,
+            caducidad: '03/04/2022',
+            precio: '$212.37'
+          },
+          {
+            id: 18,
+            nombre: 'Piping - Bags Quizna',
+            cantidad: 190,
+            caducidad: '22/06/2021',
+            precio: '$265.42'
+          },
+          {
+            id: 19,
+            nombre: 'Cranberries - Frozen',
+            cantidad: 40,
+            caducidad: '07/05/2022',
+            precio: '$430.02'
+          },
+          {
+            id: 20,
+            nombre: 'Lidsoupcont Rp12dn',
+            cantidad: 108,
+            caducidad: '15/02/2022',
+            precio: '$499.57'
+          },
+          {
+            id: 21,
+            nombre: 'Tomato - Plum With Basil',
+            cantidad: 216,
+            caducidad: '26/09/2021',
+            precio: '$35.02'
+          },
+          {
+            id: 22,
+            nombre: 'Rosemary - Dry',
+            cantidad: 111,
+            caducidad: '05/08/2021',
+            precio: '$413.11'
+          },
+          {
+            id: 23,
+            nombre: 'Beans - Yellow',
+            cantidad: 250,
+            caducidad: '12/01/2021',
+            precio: '$205.20'
+          }
+        ]
       }
     ];
 
