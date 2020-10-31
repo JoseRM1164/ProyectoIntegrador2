@@ -30,12 +30,10 @@ const routes: Routes = [
       {
         path: 'perfil',
         component: PerfilComponent,
-        children: [
-          {
-            path: 'nuevo',
-            component: NuevoPerfilComponent
-          },
-        ]
+      },
+      {
+        path: 'nuevo-perfil',
+        component: NuevoPerfilComponent
       },
       {
         path: 'reportes',
