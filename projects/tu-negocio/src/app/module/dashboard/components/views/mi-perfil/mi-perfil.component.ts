@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+/*
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { PerfilesService } from '../../../services/perfiles.service';
 import { Perfil } from '../../../../../models/perfil';
+*/
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 declare let $: any;
 @Component({
@@ -12,6 +16,21 @@ declare let $: any;
   styleUrls: ['./mi-perfil.component.scss']
 })
 export class MiPerfilComponent implements OnInit {
+
+  constructor(@Inject(DOCUMENT) private doc: Document, public auth: AuthService) {}
+
+  ngOnInit(): void {
+  }
+
+  toggleSidebar() {
+    $('#sidebar').toggleClass('active');
+  }
+
+  logout(): void {
+    this.auth.logout({ returnTo: this.doc.location.origin });
+  }
+  
+  /*
   miperfil: Perfil;
 
   modeloPerfil = this.formBuild.group({
@@ -75,4 +94,5 @@ export class MiPerfilComponent implements OnInit {
     this.perfilesService.updatePerfil(nuevoPerfil);
     this.router.navigateByUrl('/dashboard/perfil');
   }
+  */
 }

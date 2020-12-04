@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 declare let $: any;
 @Component({
@@ -10,7 +11,7 @@ declare let $: any;
 })
 export class NavbarIndexComponent implements OnInit {
 
-  constructor(private router: Router, public translate: TranslateService) { 
+  constructor(private router: Router, public translate: TranslateService, public auth: AuthService) { 
     translate.addLangs(['es', 'en']);
     translate.setDefaultLang('es');
     const browserLang = translate.getBrowserLang();
@@ -21,9 +22,12 @@ export class NavbarIndexComponent implements OnInit {
     $("html").attr("lang", this.translate.getBrowserLang() ); 
   }
 
-  btnLogInClick() {
-    this.router.navigateByUrl('/dashboard');
-    $('#LogInModal').modal('hide');
+  login(): void {
+    this.auth.loginWithRedirect();
+  }
+
+  signup(): void {
+    this.auth.loginWithRedirect({screen_hint: 'signup' });
   }
 
   switchLang(lang: string) {
