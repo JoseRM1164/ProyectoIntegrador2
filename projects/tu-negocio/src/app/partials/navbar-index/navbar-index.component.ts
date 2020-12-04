@@ -11,7 +11,7 @@ declare let $: any;
 })
 export class NavbarIndexComponent implements OnInit {
 
-  constructor(private router: Router, public translate: TranslateService, private auth: AuthService) { 
+  constructor(private router: Router, public translate: TranslateService, public auth: AuthService) { 
     translate.addLangs(['es', 'en']);
     translate.setDefaultLang('es');
     const browserLang = translate.getBrowserLang();
@@ -28,11 +28,6 @@ export class NavbarIndexComponent implements OnInit {
 
   signup(): void {
     this.auth.loginWithRedirect({screen_hint: 'signup' });
-  }
-
-  btnLogInClick() {
-    this.router.navigateByUrl('/dashboard');
-    $('#LogInModal').modal('hide');
   }
 
   switchLang(lang: string) {
