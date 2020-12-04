@@ -1,3 +1,4 @@
+// Deprecated: This service was a mock of http api call
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
