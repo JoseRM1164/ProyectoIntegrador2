@@ -14,7 +14,7 @@ import {Inventario} from '../../../models/inventario';
   providedIn: 'root'
 })
 export class InventariosService {
-  private endpoint = 'http://localhost:3000/api/inventarios';
+  private endpoint = 'http://localhost:4000/api/inventarios';
 
   currentInventario: Inventario = {
     id: 0,
