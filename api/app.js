@@ -6,8 +6,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const session = require("express-session");
-const passport = require("passport");
 const app = express();
 
 //Configuration file
