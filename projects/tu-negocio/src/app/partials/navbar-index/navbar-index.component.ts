@@ -26,6 +26,10 @@ export class NavbarIndexComponent implements OnInit {
     this.auth.loginWithRedirect();
   }
 
+  signup(): void {
+    this.auth.loginWithRedirect({screen_hint: 'signup' });
+  }
+
   btnLogInClick() {
     this.router.navigateByUrl('/dashboard');
     $('#LogInModal').modal('hide');
