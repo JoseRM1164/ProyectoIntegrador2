@@ -12,14 +12,10 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <div *ngIf="(auth.isAuthenticated$ | async) === false; else elseBlock">
-        <li>
+      <li  *ngIf="(auth.isAuthenticated$ | async) === false; else elseBlock">
           <a class="btn btn-primary my-1 mr-md-3 btn-custom" (click)="signup()">{{ 'INDEX.bTEST' | translate }}</a>
-        </li>
-        <li>
           <a class="btn btn-primary my-1 mr-md-3 btn-custom" (click)="login()">Log In</a>
-        </li>
-      </div>
+      </li>
       <ng-template #elseBlock>
         <a class="btn btn-primary my-1 mr-md-3 btn-custom" routerLink="./dashboard">Dashboard</a>
       </ng-template>
