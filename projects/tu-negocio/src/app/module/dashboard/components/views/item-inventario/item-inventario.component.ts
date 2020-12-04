@@ -72,7 +72,7 @@ export class ItemInventarioComponent implements OnInit {
       precio: Number(this.modeloProducto.value.precioProducto)
     };
     this.inventario.productos.push(nuevoProducto);
-    this.inventariosService.updateInventario(this.inventario);
+    this.inventariosService.updateInventario(this.inventario, 'idmanejable');
     $('#ProductoModal').modal('hide');
   }
 }

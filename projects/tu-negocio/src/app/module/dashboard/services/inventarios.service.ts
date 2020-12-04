@@ -1,15 +1,85 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Observable, of, throwError} from 'rxjs';
+import {map, retry, catchError, tap} from 'rxjs/operators';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpResponse,
+  HttpErrorResponse,
+} from '@angular/common/http';
 
-import { Inventario } from '../../../models/inventario';
+import {Inventario} from '../../../models/inventario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InventariosService {
-  private inventariosUrl = 'api/inventarios';
+  private endpoint = 'http://localhost:3000/api/inventarios';
+
+  currentInventario: Inventario = {
+    id: 0,
+    productos: []
+  };
+
+  constructor(private http: HttpClient) {}
+
+  modificarInventario(inventario: Inventario) {
+    this.currentInventario = inventario;
+  }
+
+  private extraData(res: Response) {
+    let body = res;
+    return body || {};
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unkown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client side errors
+    } else { 
+      // Server side errors
+      errorMessage = `Error Code: ${error.status}/nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+
+  getInventarios(): Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.endpoint).pipe(retry(3), catchError(this.handleError));
+  }
+
+  getInventario(id: string): Observable<Inventario> {
+    return this.http.get<Inventario>(this.endpoint + '/' + id).pipe(retry(3), catchError(this.handleError));
+  }
+
+  addInventario(inventario: Inventario): Observable<Inventario> {
+    return this.http.post<Inventario>(this.endpoint, inventario).pipe(retry(3), catchError(this.handleError));
+  }
+
+  updateInventario(inventario: Inventario, id: string) {
+    this.http.put<Inventario>(this.endpoint + '/' + id, inventario).subscribe({
+      next: data => {
+        console.log('datos', data)
+      },
+      error: error => {
+        this.handleError(error);
+      }
+    });
+  }
+  
+  deleteAlumno(id: string) {
+    this.http.delete<Inventario>(this.endpoint + '/' + id).subscribe({
+      next: data => {
+        console.log('datos', data)
+      },
+      error: error => {
+        this.handleError(error);
+      }
+    });
+  }
+}
+
+/*
   currentInventario: Inventario = {
     id: 0,
     productos: []
@@ -63,3 +133,4 @@ export class InventariosService {
   }
   
 }
+*/
