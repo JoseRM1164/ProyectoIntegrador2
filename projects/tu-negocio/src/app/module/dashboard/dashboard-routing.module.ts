@@ -36,6 +36,7 @@ const routes: Routes = [
         path: 'mi-perfil',
         component: MiPerfilComponent,
       },
+      /*
       {
         path: 'perfil',
         component: PerfilComponent,
@@ -46,6 +47,7 @@ const routes: Routes = [
         component: NuevoPerfilComponent,
         data: { animation: 'ToDashboard'}
       },
+      */
       {
         path: 'reportes',
         component: ReportesComponent,
