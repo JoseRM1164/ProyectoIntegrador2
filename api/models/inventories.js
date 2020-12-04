@@ -4,6 +4,7 @@ const {Schema} = mongoose;
 let inventoriesSchema = new Schema({
   name: String,
   creationDate: Date,
+  descripcion: String,
   uID: String,
 });
 
