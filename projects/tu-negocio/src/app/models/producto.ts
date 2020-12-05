@@ -1,5 +1,5 @@
 export interface Producto {
-  _id: number;
+  _id: string;
   name: string;
   cantindad: string;
   caducidad: string;

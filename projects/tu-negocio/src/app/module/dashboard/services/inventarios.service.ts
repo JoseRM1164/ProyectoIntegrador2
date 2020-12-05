@@ -60,15 +60,8 @@ export class InventariosService {
     return this.http.post<Inventario>(this.endpoint + '/cInven', inventario).pipe(retry(3), catchError(this.handleError));
   }
 
-  updateInventario(inventario: Inventario, id: string) {
-    this.http.put<Inventario>(this.endpoint + '/' + id, inventario).subscribe({
-      next: data => {
-        console.log('datos', data)
-      },
-      error: error => {
-        this.handleError(error);
-      }
-    });
+  addProducto(producto: Producto): Observable<Producto> {
+    return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
   }
   
   deleteAlumno(id: string) {

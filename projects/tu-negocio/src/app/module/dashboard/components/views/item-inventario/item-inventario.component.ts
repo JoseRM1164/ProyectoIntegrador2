@@ -63,17 +63,19 @@ export class ItemInventarioComponent implements OnInit {
   }
 
   enviar() {
-    /*
     const nuevoProducto: Producto = {
-      id: 5,
-      nombre: String(this.modeloProducto.value.nombreProducto),
-      cantidad: Number(this.modeloProducto.value.cantidadProducto),
+      _id: 'Nuevo!',
+      name: String(this.modeloProducto.value.nombreProducto),
+      cantindad: String(this.modeloProducto.value.cantidadProducto),
       caducidad: String(this.modeloProducto.value.caducidadProducto),
-      precio: Number(this.modeloProducto.value.precioProducto)
+      precio: String(this.modeloProducto.value.precioProducto),
+      invenID: this.inventario._id
     };
-    this.inventario.productos.push(nuevoProducto);
-    this.inventariosService.updateInventario(this.inventario, 'idmanejable');
+    this.inventariosService.addProducto(nuevoProducto)
+      .subscribe(producto => {
+        this.tableData.push(nuevoProducto);
+        this.dataTable.row.add(nuevoProducto).draw();
+      });
     $('#ProductoModal').modal('hide');
-    */
   }
 }
