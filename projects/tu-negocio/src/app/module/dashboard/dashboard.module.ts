@@ -19,6 +19,7 @@ import { ItemInventarioComponent } from './components/views/item-inventario/item
 import { DashboardService } from './services/dashboard.service';
 import { MiPerfilComponent } from './components/views/mi-perfil/mi-perfil.component';
 import { SingleInventarioComponent } from './components/partials/single-inventario/single-inventario.component';
+import { CurrencyInfoComponent } from './components/partials/currency-info/currency-info.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SingleInventarioComponent } from './components/partials/single-inventar
     NuevoPerfilComponent,
     ItemInventarioComponent,
     MiPerfilComponent,
-    SingleInventarioComponent
+    SingleInventarioComponent,
+    CurrencyInfoComponent
   ],
   imports: [
     CommonModule,
