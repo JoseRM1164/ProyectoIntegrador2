@@ -11,3 +11,8 @@ export interface MaxPriceInv {
   _id: string;
   sumTotal: number;
 }
+
+export interface MaxProdInv {
+  _id: string;
+  totalUniqueProducts: number;
+}

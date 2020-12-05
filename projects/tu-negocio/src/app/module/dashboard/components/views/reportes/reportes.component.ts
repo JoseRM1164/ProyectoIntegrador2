@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InventariosService } from '../../../services/inventarios.service';
-import { MaxPriceInv } from '../../../../../models/inventario';
+import { MaxPriceInv, MaxProdInv} from '../../../../../models/inventario';
 
 declare let $: any;
 @Component({
@@ -10,17 +10,24 @@ declare let $: any;
   styleUrls: ['./reportes.component.scss']
 })
 export class ReportesComponent implements OnInit {
-  maxPrice: MaxPriceInv[] = []
+  maxPrice: MaxPriceInv[] = [];
+  maxProd: MaxProdInv[] = [];
 
   constructor(private inventariosService: InventariosService) { }
 
   ngOnInit(): void {
     this.getMaxPrice();
+    this.getMaxProd();
   }
 
   getMaxPrice(): void {
     this.inventariosService.getMaxPriceInventarios()
     .subscribe(maxprices => this.maxPrice = maxprices);
+  }
+
+  getMaxProd(): void {
+    this.inventariosService.getMaxProd()
+    .subscribe(maxprods => this.maxProd = maxprods);
   }
   
   toggleSidebar() {
