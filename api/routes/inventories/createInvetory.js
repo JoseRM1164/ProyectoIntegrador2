@@ -9,19 +9,21 @@ router.post("/", [
   body("descripcion").isString()
 ],async (req, res, next) => {
   let errors = validationResult(req);
+  let date = Date.now();
   if(!errors.isEmpty()) return res.status(400).json({ errors: errors.array()});
   try{
     let newInventory = new inventories({
       name: req.body.name,
-      creationDate: Date.now(),
+      creationDate: date,
       descripcion: req.body.descripcion,
       lang: req.body.lang,
       uID: req.body.uID
     });
 
-    await newInventory.save();
+    let newAddition = await newInventory.save();
 
     res.status(200).json({
+      newAddition,
       success: true,
       message: "Creación exitosa",
     });

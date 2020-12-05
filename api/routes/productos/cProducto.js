@@ -21,9 +21,10 @@ router.post("/", [
       invenID: req.body.invenID
     });
   
-    await newProducto.save();
+    let newProd = await newProducto.save();
    
     res.status(200).json({
+      newProd,
       success: true,
       message: "Creación exitosa",
     });
