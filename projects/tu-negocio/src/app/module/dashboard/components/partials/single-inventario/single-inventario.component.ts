@@ -22,4 +22,10 @@ export class SingleInventarioComponent implements OnInit {
     this.inventariosService.accederInventario(this.inventario);
   }
 
+  borrarInventario() {
+    this.inventariosService.deleteInventario(this.inventario).subscribe(inventario => {
+      this.inventariosService.inventarios = this.inventariosService.inventarios.filter((x) => x !== this.inventario);
+    });
+  }
+
 }

@@ -7,7 +7,7 @@ let inventories = require("../../models/inventories");
 router.post("/", [
   body("name").isString(),
   body("descripcion").isString()
-], async (req, res, next) => {
+],async (req, res, next) => {
   let errors = validationResult(req);
   let date = Date.now();
   if(!errors.isEmpty()) return res.status(400).json({ errors: errors.array()});

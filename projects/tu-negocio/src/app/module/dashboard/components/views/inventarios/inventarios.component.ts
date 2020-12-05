@@ -11,16 +11,12 @@ declare let $: any;
   styleUrls: ['./inventarios.component.scss']
 })
 export class InventariosComponent implements OnInit {
-  inventarios: Inventario[];
-
   formInventario = this.formBuild.group({
     nameInven: ['', Validators.required],
     descripcionInven: ['', Validators.required]
   });
 
-  constructor(private formBuild: FormBuilder, private inventariosService: InventariosService) {
-    this.inventarios = [];
-  }
+  constructor(private formBuild: FormBuilder, public inventariosService: InventariosService) {}
 
   ngOnInit(): void {
     this.getInventarios();
@@ -38,7 +34,7 @@ export class InventariosComponent implements OnInit {
   getInventarios(): void {
     this.inventariosService
       .getInventarios(this.getLang())
-      .subscribe(inventarios => (this.inventarios = inventarios));
+      .subscribe(inventarios => (this.inventariosService.inventarios = inventarios));
     // this.inventariosService.currentInventario = this.inventarios[0];
   }
   
@@ -53,7 +49,7 @@ export class InventariosComponent implements OnInit {
       uID: '10'
     };
     this.inventariosService.addInventario(nuevoInven)
-      .subscribe(inventario => this.inventarios.push(nuevoInven));
+      .subscribe(inventario => this.inventariosService.inventarios.push(nuevoInven));
     $('#newModal').modal('hide');
   }
 }

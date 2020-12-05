@@ -19,7 +19,7 @@
 <!--Cartas-->
 <div class="row">
   <app-single-inventario
-    *ngFor="let inventario of inventarios"
+    *ngFor="let inventario of inventariosService.inventarios"
     [inventario]="inventario"
   ></app-single-inventario>
   <!--Modal-->

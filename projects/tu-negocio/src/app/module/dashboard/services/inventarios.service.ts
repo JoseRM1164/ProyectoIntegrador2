@@ -17,6 +17,8 @@ import {Producto} from '../../../models/producto';
 export class InventariosService {
   private endpoint = 'http://localhost:4000/api';
 
+  inventarios: Inventario[] = [];
+
   currentInventario: Inventario = {
     _id: 'none',
     name: 'none',
@@ -43,7 +45,7 @@ export class InventariosService {
       // Client side errors
     } else { 
       // Server side errors
-      errorMessage = `Error Code: ${error.status}/nMessage: ${error.message}`;
+      errorMessage = `Codigo de error ${error.status}, por favor contacte al admin."`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
@@ -69,15 +71,12 @@ export class InventariosService {
     return this.http.get<Inventario[]>(this.endpoint + '/maxProd').pipe(retry(3), catchError(this.handleError));
   }
   
-  deleteAlumno(id: string) {
-    this.http.delete<Inventario>(this.endpoint + '/' + id).subscribe({
-      next: data => {
-        console.log('datos', data)
-      },
-      error: error => {
-        this.handleError(error);
-      }
-    });
+  deleteInventario(inventario: Inventario): Observable<Inventario> {
+    return this.http.delete<Inventario>(this.endpoint + '/dInven?invenID=' + inventario._id).pipe(retry(3), catchError(this.handleError));
+  }
+
+  deleteProducto(idprod: string): Observable<Producto> {
+    return this.http.delete<Producto>(this.endpoint + '/dProd?invenID=' + idprod).pipe(retry(3), catchError(this.handleError));
   }
 }
 
