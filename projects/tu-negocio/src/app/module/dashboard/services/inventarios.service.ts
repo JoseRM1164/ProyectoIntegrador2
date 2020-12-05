@@ -49,8 +49,8 @@ export class InventariosService {
     return throwError(errorMessage);
   }
 
-  getInventarios(): Observable<Inventario[]> {
-    return this.http.get<Inventario[]>(this.endpoint + '/rInven').pipe(retry(3), catchError(this.handleError));
+  getInventarios(lang: string): Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.endpoint + '/rInven?lang=' + lang).pipe(retry(3), catchError(this.handleError));
   }
 
   getProductos(id: string): Observable<Producto[]> {

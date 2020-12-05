@@ -10,6 +10,7 @@ router.post("/", async (req, res, next) => {
       name: req.body.name,
       creationDate: Date.now(),
       descripcion: req.body.descripcion,
+      lang: req.body.lang,
       uID: req.body.uID
     });
 
