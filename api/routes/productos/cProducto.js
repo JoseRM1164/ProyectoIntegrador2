@@ -6,9 +6,9 @@ let Producto = require("../../models/productos");
 
 router.post("/", [
   body("name").isString(),
-  body("cantidad").isString(),
+  body("cantidad").isNumeric(),
   body("caducidad").isString(),
-  body("precio").isInt()
+  body("precio").isNumeric()
 ], async (req, res, next) => {
   let errors = validationResult(req);
   if(!errors.isEmpty()) return res.status(400).json({ errors: errors.array()});
