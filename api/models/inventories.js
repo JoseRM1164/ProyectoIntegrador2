@@ -4,9 +4,9 @@ const {Schema} = mongoose;
 let inventoriesSchema = new Schema({
   name: String,
   creationDate: Date,
+  descripcion: String,
   uID: String,
-  products: [Schema.Types.Mixed]
 });
 
-let inventories = mongoose.model('inventories', inventoriesSchema, 'Inventories')
+let inventories = mongoose.model('Inventarios', inventoriesSchema, 'Inventarios')
 module.exports = inventories;
