@@ -1,19 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require('../../config/configJWT');
-let inventories = require("../../models/inventories");
+let Producto = require("../../models/productos");
 
 router.post("/", async (req, res, next) => {
   try {
     console.log(req.body.name)
-    let newInventory = new inventories({
-      name: req.body.name,
-      creationDate: Date.now(),
-      descripcion: req.body.descripcion,
-      uID: req.body.uID
+    let newProducto= new Producto({
+			name: req.body.name,
+  		cantindad: req.body.cantindad,
+			caducidad: req.body.caducidad,
+			precio: req.body.precio,
+  		invenID: req.body.invenID
     });
 
-    await newInventory.save();
+    await newProducto.save();
  
     res.status(200).json({
       success: true,
