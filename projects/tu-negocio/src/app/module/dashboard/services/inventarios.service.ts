@@ -63,6 +63,10 @@ export class InventariosService {
   addProducto(producto: Producto): Observable<Producto> {
     return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
   }
+
+  getMaxProd(): Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.endpoint + '/maxProd').pipe(retry(3), catchError(this.handleError));
+  }
   
   deleteAlumno(id: string) {
     this.http.delete<Inventario>(this.endpoint + '/' + id).subscribe({
