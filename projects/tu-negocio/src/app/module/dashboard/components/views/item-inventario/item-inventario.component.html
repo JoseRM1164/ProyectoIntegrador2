@@ -5,12 +5,19 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="mr-auto">
-        <h1 class="display-1"><strong>Inventario {{ inventario.id }}</strong></h1>
+        <h1 class="display-1"><strong>Inventario {{ inventario.name }}</strong></h1>
       </div>
+        <form class="navbar-nav ml-auto navbar-buttons" [formGroup]="elimProd" (ngSubmit)="borrarProducto()">
+          <input class="form-control mt-3 m-1 " type="text" formControlName="idprod" placeholder="Id Producto a Borrar">
+          <button class="btn-custom bg-danger " type="submit">Borrar producto</button>
+        </form>
       <div class="navbar-nav ml-auto navbar-buttons">
-        <a class="btn-custom" data-toggle="modal" data-target="#ProductoModal"
+      
+      
+        <a class="btn-custom " data-toggle="modal" data-target="#ProductoModal"
           >Nuevo producto</a
         >
+        
       </div>
     </nav>
   </div>
@@ -54,7 +61,7 @@
             <h2 class="text-md-left">
               Cantidad :
               <input
-                type="text"
+                type="number"
                 formControlName="cantidadProducto"
                 class="form-control m-4"
                 placeholder="Añadir Cantidad"
@@ -64,7 +71,7 @@
             <h2 class="text-md-left">
               Caducidad :
               <input
-                type="text"
+                type="date"
                 formControlName="caducidadProducto"
                 class="form-control m-4"
                 placeholder="Añadir Caducidad"
@@ -74,7 +81,7 @@
             <h2 class="text-md-left">
               Precio/Kg :
               <input
-                type="text"
+                type="number"
                 formControlName="precioProducto"
                 class="form-control m-4"
                 placeholder="Añadir Precio por kilo"

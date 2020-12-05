@@ -1,7 +1,8 @@
 export interface Producto {
-  id: number;
-  nombre: string;
-  cantidad: number;
+  _id: string;
+  name: string;
+  cantindad: number;
   caducidad: string;
   precio: number;
+  invenID: string;
 }

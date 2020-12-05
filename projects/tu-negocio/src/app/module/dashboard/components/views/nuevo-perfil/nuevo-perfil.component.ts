@@ -1,3 +1,4 @@
+// Deprecated: No nuevo perfil call to api
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';

@@ -10,15 +10,15 @@ import { DashboardComponent } from './components/views/dashboard/dashboard.compo
 import { SidebarComponent } from './components/partials/sidebar/sidebar.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { InventariosComponent } from './components/views/inventarios/inventarios.component';
-import { PerfilComponent } from './components/views/perfil/perfil.component';
+// import { PerfilComponent } from './components/views/perfil/perfil.component';
 import { ReportesComponent } from './components/views/reportes/reportes.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { NavDashboardComponent } from './components/partials/nav-dashboard/nav-dashboard.component';
-import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
+// import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
 import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
-import { DashboardService } from './services/dashboard.service';
 import { MiPerfilComponent } from './components/views/mi-perfil/mi-perfil.component';
 import { SingleInventarioComponent } from './components/partials/single-inventario/single-inventario.component';
+import { CurrencyInfoComponent } from './components/partials/currency-info/currency-info.component';
 
 
 @NgModule({
@@ -27,14 +27,15 @@ import { SingleInventarioComponent } from './components/partials/single-inventar
     SidebarComponent,
     HomeComponent,
     InventariosComponent,
-    PerfilComponent,
+    // PerfilComponent,
     ReportesComponent,
     FooterComponent,
     NavDashboardComponent,
-    NuevoPerfilComponent,
+    // NuevoPerfilComponent,
     ItemInventarioComponent,
     MiPerfilComponent,
-    SingleInventarioComponent
+    SingleInventarioComponent,
+    CurrencyInfoComponent
   ],
   imports: [
     CommonModule,
@@ -42,12 +43,6 @@ import { SingleInventarioComponent } from './components/partials/single-inventar
     ChartsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
-    // HttpClientInMemoryModule itercepts HTTP reequests
-    // Remove it when a real serve is ready to receive requests
-    HttpClientInMemoryWebApiModule.forRoot(
-      DashboardService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    )
   ],
 })
 export class DashboardModule { }

@@ -1,15 +1,90 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Observable, of, throwError} from 'rxjs';
+import {map, retry, catchError, tap} from 'rxjs/operators';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpResponse,
+  HttpErrorResponse,
+} from '@angular/common/http';
 
-import { Inventario } from '../../../models/inventario';
+import {Inventario, MaxPriceInv, MaxProdInv} from '../../../models/inventario';
+import {Producto} from '../../../models/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InventariosService {
-  private inventariosUrl = 'api/inventarios';
+  endpoint = 'http://localhost:4000/api';
+
+  inventarios: Inventario[] = [];
+
+  currentInventario: Inventario = {
+    _id: 'none',
+    name: 'none',
+    descripcion: 'none',
+    creationDate: new Date(),
+    lang: 'none',
+    uID: 'none'
+  };
+
+  constructor(private http: HttpClient) {}
+
+  accederInventario(inventario: Inventario) {
+    this.currentInventario = inventario;
+  }
+
+  private extraData(res: Response) {
+    let body = res;
+    return body || {};
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unkown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client side errors
+    } else { 
+      // Server side errors
+      errorMessage = `Codigo de error ${error.status}, por favor contacte al admin.`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+  
+  getMaxPriceInventarios(): Observable<MaxPriceInv[]> {
+    return this.http.get<MaxPriceInv[]>(this.endpoint + '/maxPrice').pipe(retry(3), catchError(this.handleError));
+  }
+
+  getInventarios(lang: string): Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.endpoint + '/rInven?lang=' + lang).pipe(retry(3), catchError(this.handleError));
+  }
+
+  getProductos(id: string): Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.endpoint + '/rProd?invenID=' + id).pipe(retry(3), catchError(this.handleError));
+  }
+
+  addInventario(inventario: Inventario): Observable<Inventario> {
+    return this.http.post<Inventario>(this.endpoint + '/cInven', inventario).pipe(retry(3), catchError(this.handleError));
+  }
+
+  addProducto(producto: Producto): Observable<Producto> {
+    return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
+  }
+
+  getMaxProd(): Observable<MaxProdInv[]> {
+    return this.http.get<MaxProdInv[]>(this.endpoint + '/maxProd').pipe(retry(3), catchError(this.handleError));
+  }
+  
+  deleteInventario(inventario: Inventario): Observable<Inventario> {
+    return this.http.delete<Inventario>(this.endpoint + '/dInven?invenID=' + inventario._id).pipe(retry(3), catchError(this.handleError));
+  }
+
+  deleteProducto(idprod: string): Observable<Producto> {
+    return this.http.delete<Producto>(this.endpoint + '/dProd?invenID=' + idprod).pipe(retry(3), catchError(this.handleError));
+  }
+}
+
+/*
   currentInventario: Inventario = {
     id: 0,
     productos: []
@@ -63,3 +138,4 @@ export class InventariosService {
   }
   
 }
+*/
