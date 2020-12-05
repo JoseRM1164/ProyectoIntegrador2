@@ -12,6 +12,8 @@
 </div>
 <!-- Content -->
 {{ inventarios | json }}
+<p>Separator</p>
+{{ productos | json }}
 <div class="row">
   <div class="col-lg-6 col-sm">
     <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"

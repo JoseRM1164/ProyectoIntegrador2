@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
+import { Producto } from '../../../../../models/producto';
 
 declare let $: any;
 @Component({
@@ -11,6 +12,7 @@ declare let $: any;
 })
 export class HomeComponent implements OnInit {
   inventarios: Inventario[];
+  productos: Producto[] = [];
 
   constructor(private inventariosService: InventariosService) {
     this.inventarios = [];
@@ -42,7 +44,19 @@ export class HomeComponent implements OnInit {
   getInventarios(): void {
     this.inventariosService
       .getInventarios(this.getLang())
-      .subscribe(inventarios => (this.inventarios = inventarios));
+    .subscribe(inventarios => {
+      this.inventariosService.inventarios = inventarios;
+      this.getLatestProds(this.inventarios[0]._id);
+    });
+    // this.inventariosService.currentInventario = this.inventarios[0];
+  }
+  
+  getLatestProds(idinv: string): void {
+    this.inventariosService
+    .getProductos(idinv)
+    .subscribe(productos => {
+      this.productos = productos;
+    });
   }
 
 }

@@ -12,6 +12,7 @@ declare let $: any;
 export class ReportesComponent implements OnInit {
   maxPrice: MaxPriceInv[] = [];
   maxProd: MaxProdInv[] = [];
+  public chartData = [];
 
   constructor(private inventariosService: InventariosService) { }
 
@@ -22,7 +23,14 @@ export class ReportesComponent implements OnInit {
 
   getMaxPrice(): void {
     this.inventariosService.getMaxPriceInventarios()
-    .subscribe(maxprices => this.maxPrice = maxprices);
+    .subscribe(maxprices => {
+      this.maxPrice = maxprices;
+      this.chartData = [
+    { data: [this.maxPrice[0].sumTotal, 600, 260, 700], label: 'Account A' },
+    { data: [120, 455, 100, 340], label: 'Account B' },
+    { data: [45, 67, 800, 500], label: 'Account C' }
+      ];
+    });
   }
 
   getMaxProd(): void {
@@ -36,11 +44,6 @@ export class ReportesComponent implements OnInit {
 
   public chartOptions = { responsive: true };
 
-  public chartData = [
-    { data: [330, 600, 260, 700], label: 'Account A' },
-    { data: [120, 455, 100, 340], label: 'Account B' },
-    { data: [45, 67, 800, 500], label: 'Account C' }
-  ];
 
   public chartLabels = ['January', 'February', 'Mars', 'April'];
 }
