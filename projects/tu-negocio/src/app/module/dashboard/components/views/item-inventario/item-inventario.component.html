@@ -4,9 +4,11 @@
       <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="toggleSidebar()">
         <i class="fas fa-bars"></i>
       </button>
+      <!--
       <div class="mr-auto">
         <h1 class="display-1"><strong>Inventario {{ inventario.id }}</strong></h1>
       </div>
+      -->
       <div class="navbar-nav ml-auto navbar-buttons">
         <a class="btn-custom" data-toggle="modal" data-target="#ProductoModal"
           >Nuevo producto</a
@@ -38,6 +40,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <!--
       <form [formGroup]="modeloProducto" (ngSubmit)="enviar()">
         <div class="modal-body mx-3">
           <div class="text-nowrap m-3">
@@ -89,6 +92,7 @@
           </button>
         </div>
         </form>
+      -->
     </div>
   </div>
 </div>

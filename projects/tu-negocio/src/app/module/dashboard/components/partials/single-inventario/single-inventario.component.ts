@@ -17,7 +17,7 @@ export class SingleInventarioComponent implements OnInit {
   }
 
   verInventario() {
-    this.inventariosService.modificarInventario(this.inventario);
+    // this.inventariosService.modificarInventario(this.inventario);
   }
 
 }

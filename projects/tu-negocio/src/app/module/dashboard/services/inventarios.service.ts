@@ -14,18 +14,22 @@ import {Inventario} from '../../../models/inventario';
   providedIn: 'root'
 })
 export class InventariosService {
-  private endpoint = 'http://localhost:4000/api/inventarios';
+  private endpoint = 'http://localhost:4000/api/rInven';
 
+  /*
   currentInventario: Inventario = {
     id: 0,
     productos: []
   };
+  */
 
   constructor(private http: HttpClient) {}
 
+  /*
   modificarInventario(inventario: Inventario) {
     this.currentInventario = inventario;
   }
+  */
 
   private extraData(res: Response) {
     let body = res;

@@ -12,7 +12,7 @@ declare let $: any;
   styleUrls: ['./item-inventario.component.scss']
 })
 export class ItemInventarioComponent implements OnInit {
-  inventario: Inventario;
+  // inventario: Inventario;
   dataTable: any;
   dtOptions: any;
   tableData: Producto[] = [];
@@ -29,7 +29,7 @@ export class ItemInventarioComponent implements OnInit {
     private formBuild: FormBuilder,
     private inventariosService: InventariosService
   ) {
-    this.inventario = this.inventariosService.currentInventario;
+    // this.inventario = this.inventariosService.currentInventario;
   }
 
   ngOnInit(): void {
@@ -42,6 +42,7 @@ export class ItemInventarioComponent implements OnInit {
 
 
   getInventario(): void {
+    /*
     this.inventariosService
       .getInventarios()
     .subscribe(inventarios => {
@@ -61,9 +62,11 @@ export class ItemInventarioComponent implements OnInit {
       this.dataTable = $(this.table.nativeElement);
       this.dataTable.DataTable(this.dtOptions);
     });
+    */
   }
 
   enviar() {
+    /*
     const nuevoProducto: Producto = {
       id: 5,
       nombre: String(this.modeloProducto.value.nombreProducto),
@@ -74,5 +77,6 @@ export class ItemInventarioComponent implements OnInit {
     this.inventario.productos.push(nuevoProducto);
     this.inventariosService.updateInventario(this.inventario, 'idmanejable');
     $('#ProductoModal').modal('hide');
+    */
   }
 }

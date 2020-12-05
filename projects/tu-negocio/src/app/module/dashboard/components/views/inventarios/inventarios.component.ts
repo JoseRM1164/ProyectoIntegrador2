@@ -28,16 +28,18 @@ export class InventariosComponent implements OnInit {
     this.inventariosService
       .getInventarios()
       .subscribe(inventarios => (this.inventarios = inventarios));
-    this.inventariosService.currentInventario = this.inventarios[0];
+    // this.inventariosService.currentInventario = this.inventarios[0];
   }
 
   nuevoInventario() {
+  /*
     const nuevo: Inventario = {
-      id: 10,
+      id: "10",
       productos: []
     };
     this.inventariosService.addInventario(nuevo)
       .subscribe(inventario => this.inventarios.push(inventario));
     $('#newModal').modal('hide');
+  */
   }
 }
