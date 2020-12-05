@@ -22,6 +22,7 @@ export class InventariosService {
     name: 'none',
     descripcion: 'none',
     creationDate: new Date(),
+    lang: 'none',
     uID: 'none'
   };
 
