@@ -7,7 +7,6 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const app = express();
-const valid = require('express-validator');
 
 
 //Configuration file
@@ -35,7 +34,6 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(expressValidator())
 
 // Start of Routes
 let indexRouter = require("./routes/index");

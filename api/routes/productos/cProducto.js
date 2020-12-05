@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require('../../config/configJWT');
-const valid = require('../../config/validacion');
 let Producto = require("../../models/productos");
 
 router.post("/", async (req, res, next) => {
