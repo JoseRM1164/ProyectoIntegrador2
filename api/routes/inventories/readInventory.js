@@ -4,7 +4,7 @@ let inventorie = require('../../models/inventories');
 
 router.get('/', async (req, res, next) => {
 	const inventarios = await inventorie.find(
-		{'uID': req.body.uID}
+		{'uID': req.query.uID}
 	);
 	
 	res.json(inventarios);
