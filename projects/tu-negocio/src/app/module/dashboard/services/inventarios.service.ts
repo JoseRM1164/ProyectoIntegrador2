@@ -24,6 +24,7 @@ export class InventariosService {
     name: 'none',
     descripcion: 'none',
     creationDate: new Date(),
+    lang: 'none',
     uID: 'none'
   };
 
@@ -50,8 +51,8 @@ export class InventariosService {
     return throwError(errorMessage);
   }
 
-  getInventarios(): Observable<Inventario[]> {
-    return this.http.get<Inventario[]>(this.endpoint + '/rInven').pipe(retry(3), catchError(this.handleError));
+  getInventarios(lang: string): Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.endpoint + '/rInven?lang=' + lang).pipe(retry(3), catchError(this.handleError));
   }
 
   getProductos(id: string): Observable<Producto[]> {
@@ -64,6 +65,10 @@ export class InventariosService {
 
   addProducto(producto: Producto): Observable<Producto> {
     return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
+  }
+
+  getMaxProd(): Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.endpoint + '/maxProd').pipe(retry(3), catchError(this.handleError));
   }
   
   deleteInventario(inventario: Inventario): Observable<Inventario> {

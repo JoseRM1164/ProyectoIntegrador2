@@ -4,7 +4,7 @@ let Productos = require('../../models/productos');
 
 router.get('/', async (req, res, next) => {
 	const productos = await Productos.find(
-		{'invenID': req.query.invenID}
+		{'invenID': req.query.invenID},
 	);
 	
 	res.json(productos);

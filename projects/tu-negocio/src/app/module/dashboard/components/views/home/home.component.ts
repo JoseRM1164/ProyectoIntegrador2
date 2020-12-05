@@ -34,9 +34,14 @@ export class HomeComponent implements OnInit {
 
   public chartLabels = ['January', 'February', 'Mars', 'April'];
 
+  getLang() {
+    let lang = $("html").attr("lang");
+    return lang
+  }
+
   getInventarios(): void {
     this.inventariosService
-      .getInventarios()
+      .getInventarios(this.getLang())
       .subscribe(inventarios => (this.inventarios = inventarios));
   }
 

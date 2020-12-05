@@ -3,5 +3,6 @@ export interface Inventario {
   name: string;
   creationDate: Date;
   descripcion: string;
+  lang: string;
   uID: string;
 }
