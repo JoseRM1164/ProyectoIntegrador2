@@ -45,7 +45,7 @@ export class InventariosService {
       // Client side errors
     } else { 
       // Server side errors
-      errorMessage = `Error Code: ${error.status}/nMessage: ${error.message}`;
+      errorMessage = `Codigo de error ${error.status}, por favor contacte al admin."`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
