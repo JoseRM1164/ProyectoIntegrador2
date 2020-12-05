@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
@@ -27,9 +28,13 @@ export class ItemInventarioComponent implements OnInit {
 
   constructor(
     private formBuild: FormBuilder,
-    private inventariosService: InventariosService
+    private inventariosService: InventariosService,
+    private router: Router
   ) {
     this.inventario = this.inventariosService.currentInventario;
+    if (this.inventario._id === 'none') {
+      this.router.navigateByUrl('/dashboard/inventarios');
+    }
   }
 
   ngOnInit(): void {
@@ -66,20 +71,15 @@ export class ItemInventarioComponent implements OnInit {
     const nuevoProducto: Producto = {
       _id: 'Nuevo!',
       name: String(this.modeloProducto.value.nombreProducto),
-      cantindad: String(this.modeloProducto.value.cantidadProducto),
+      cantindad: Number(this.modeloProducto.value.cantidadProducto),
       caducidad: String(this.modeloProducto.value.caducidadProducto),
-      precio: String(this.modeloProducto.value.precioProducto),
+      precio: Number(this.modeloProducto.value.precioProducto),
       invenID: this.inventario._id
     };
     this.inventariosService.addProducto(nuevoProducto)
       .subscribe(producto => {
         this.tableData.push(nuevoProducto);
-        this.dataTable.row.add([
-          'one',
-          'two',
-          'tree',
-          'four'
-        ]).draw();
+        this.dataTable.DataTable().row.add(nuevoProducto).draw();
       });
     $('#ProductoModal').modal('hide');
   }

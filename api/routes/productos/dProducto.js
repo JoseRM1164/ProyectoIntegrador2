@@ -4,7 +4,7 @@ let Productos = require('../../models/inventories');
 
 router.delete('/', async (req, res, next) => {
 	try {
-		let dID = req.body.invenID;
+		let dID = req.query.invenID;
 		await Productos.deleteOne({ _id: dID});
 
 		res.status(200).json({

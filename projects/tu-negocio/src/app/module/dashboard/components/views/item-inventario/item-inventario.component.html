@@ -21,7 +21,7 @@
   </div>
 </div>
 <!-- Content -->
-<p>{{ inventario | json }}</p>
+<p>{{ tableData | json }}</p>
 <div
   class="modal fade"
   id="ProductoModal"
@@ -60,7 +60,7 @@
             <h2 class="text-md-left">
               Cantidad :
               <input
-                type="text"
+                type="number"
                 formControlName="cantidadProducto"
                 class="form-control m-4"
                 placeholder="Añadir Cantidad"
@@ -70,7 +70,7 @@
             <h2 class="text-md-left">
               Caducidad :
               <input
-                type="text"
+                type="date"
                 formControlName="caducidadProducto"
                 class="form-control m-4"
                 placeholder="Añadir Caducidad"
@@ -80,7 +80,7 @@
             <h2 class="text-md-left">
               Precio/Kg :
               <input
-                type="text"
+                type="number"
                 formControlName="precioProducto"
                 class="form-control m-4"
                 placeholder="Añadir Precio por kilo"
