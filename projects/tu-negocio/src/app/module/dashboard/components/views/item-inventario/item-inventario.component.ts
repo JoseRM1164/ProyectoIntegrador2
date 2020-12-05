@@ -74,7 +74,12 @@ export class ItemInventarioComponent implements OnInit {
     this.inventariosService.addProducto(nuevoProducto)
       .subscribe(producto => {
         this.tableData.push(nuevoProducto);
-        this.dataTable.row.add(nuevoProducto).draw();
+        this.dataTable.row.add([
+          'one',
+          'two',
+          'tree',
+          'four'
+        ]).draw();
       });
     $('#ProductoModal').modal('hide');
   }
