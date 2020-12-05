@@ -1,6 +1,7 @@
-import { Producto } from './producto';
-
 export interface Inventario {
-  id: number;
-  productos: Producto[];
+  _id: string;
+  name: string;
+  creationDate: Date;
+  descripcion: string;
+  uID: string;
 }

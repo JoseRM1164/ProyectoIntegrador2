@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
 
 import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
@@ -12,7 +13,12 @@ declare let $: any;
 export class InventariosComponent implements OnInit {
   inventarios: Inventario[];
 
-  constructor(private inventariosService: InventariosService) {
+  formInventario = this.formBuild.group({
+    nameInven: ['', Validators.required],
+    descripcionInven: ['', Validators.required]
+  });
+
+  constructor(private formBuild: FormBuilder, private inventariosService: InventariosService) {
     this.inventarios = [];
   }
 
@@ -28,16 +34,20 @@ export class InventariosComponent implements OnInit {
     this.inventariosService
       .getInventarios()
       .subscribe(inventarios => (this.inventarios = inventarios));
-    this.inventariosService.currentInventario = this.inventarios[0];
+    // this.inventariosService.currentInventario = this.inventarios[0];
   }
+  
 
-  nuevoInventario() {
-    const nuevo: Inventario = {
-      id: 10,
-      productos: []
+  enviar() {
+    const nuevoInven: Inventario = {
+      _id: 'Nuevo!',
+      name: String(this.formInventario.value.nameInven),
+      creationDate: new Date(),
+      descripcion: String(this.formInventario.value.descripcionInven),
+      uID: '10'
     };
-    this.inventariosService.addInventario(nuevo)
-      .subscribe(inventario => this.inventarios.push(inventario));
+    this.inventariosService.addInventario(nuevoInven)
+      .subscribe(inventario => this.inventarios.push(nuevoInven));
     $('#newModal').modal('hide');
   }
 }

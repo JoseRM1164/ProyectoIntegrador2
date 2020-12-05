@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
@@ -27,9 +28,13 @@ export class ItemInventarioComponent implements OnInit {
 
   constructor(
     private formBuild: FormBuilder,
-    private inventariosService: InventariosService
+    private inventariosService: InventariosService,
+    private router: Router
   ) {
     this.inventario = this.inventariosService.currentInventario;
+    if (this.inventario._id === 'none') {
+      this.router.navigateByUrl('/dashboard/inventarios');
+    }
   }
 
   ngOnInit(): void {
@@ -43,16 +48,15 @@ export class ItemInventarioComponent implements OnInit {
 
   getInventario(): void {
     this.inventariosService
-      .getInventarios()
-    .subscribe(inventarios => {
-      this.inventario = inventarios[0];
-      this.tableData = this.inventario.productos;
+    .getProductos(this.inventario._id)
+    .subscribe(productos => {
+      this.tableData = productos;
       this.dtOptions = {
         data: this.tableData,
         columns: [
-          { title: 'ID', data: 'id'},
-          { title: 'nombre', data: 'nombre'},
-          { title: 'cantidad', data: 'cantidad'},
+          { title: 'ID', data: '_id'},
+          { title: 'nombre', data: 'name'},
+          { title: 'cantidad', data: 'cantindad'},
           { title: 'caducidad', data: 'caducidad'},
           { title: 'precio', data: 'precio'}
         ]
@@ -65,14 +69,18 @@ export class ItemInventarioComponent implements OnInit {
 
   enviar() {
     const nuevoProducto: Producto = {
-      id: 5,
-      nombre: String(this.modeloProducto.value.nombreProducto),
-      cantidad: Number(this.modeloProducto.value.cantidadProducto),
+      _id: 'Nuevo!',
+      name: String(this.modeloProducto.value.nombreProducto),
+      cantindad: Number(this.modeloProducto.value.cantidadProducto),
       caducidad: String(this.modeloProducto.value.caducidadProducto),
-      precio: Number(this.modeloProducto.value.precioProducto)
+      precio: Number(this.modeloProducto.value.precioProducto),
+      invenID: this.inventario._id
     };
-    this.inventario.productos.push(nuevoProducto);
-    this.inventariosService.updateInventario(this.inventario);
+    this.inventariosService.addProducto(nuevoProducto)
+      .subscribe(producto => {
+        this.tableData.push(nuevoProducto);
+        this.dataTable.DataTable().row.add(nuevoProducto).draw();
+      });
     $('#ProductoModal').modal('hide');
   }
 }

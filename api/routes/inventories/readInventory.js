@@ -3,10 +3,7 @@ const router = express.Router();
 let inventorie = require('../../models/inventories');
 
 router.get('/', async (req, res, next) => {
-	const inventarios = await inventorie.find(
-		{'uID': req.body.uID}
-	);
-	
+	const inventarios = await inventorie.find({'lang': req.query.lang});
 	res.json(inventarios);
 });
 
