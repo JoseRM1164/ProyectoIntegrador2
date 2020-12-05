@@ -74,6 +74,10 @@ export class InventariosService {
   deleteInventario(inventario: Inventario): Observable<Inventario> {
     return this.http.delete<Inventario>(this.endpoint + '/dInven?invenID=' + inventario._id).pipe(retry(3), catchError(this.handleError));
   }
+
+  deleteProducto(idprod: string): Observable<Producto> {
+    return this.http.delete<Producto>(this.endpoint + '/dProd?invenID=' + idprod).pipe(retry(3), catchError(this.handleError));
+  }
 }
 
 /*

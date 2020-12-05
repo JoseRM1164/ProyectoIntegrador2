@@ -26,6 +26,10 @@ export class ItemInventarioComponent implements OnInit {
     precioProducto: ['', [Validators.required]]
   });
 
+  elimProd = this.formBuild.group({
+    idprod: ['', Validators.required]
+  });
+
   constructor(
     private formBuild: FormBuilder,
     private inventariosService: InventariosService,
@@ -66,6 +70,18 @@ export class ItemInventarioComponent implements OnInit {
       this.dataTable.DataTable(this.dtOptions);
     });
   }
+
+  borrarProducto() {
+    const idprod = String(this.elimProd.value.idprod);
+    this.inventariosService.deleteProducto(idprod).subscribe(producto => {
+      this.tableData = this.tableData.filter((x) => x._id !== idprod);
+      this.elimProd.reset();
+      this.dataTable.DataTable().clear().draw();
+      this.dataTable.DataTable().rows.add(this.tableData); // Add new data
+      this.dataTable.DataTable().columns.adjust().draw();
+    });
+  }
+
 
   enviar() {
     const nuevoProducto: Producto = {
