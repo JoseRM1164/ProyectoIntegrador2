@@ -11,27 +11,17 @@
   </div>
 </div>
 <!-- Content -->
-{{ inventarios | json }}
-<p>Separator</p>
-{{ productos | json }}
-<div class="row">
+<div class="row pt-5">
   <div class="col-lg-6 col-sm">
     <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
-    [chartType]="'bar'"></canvas>
+      [chartType]="'line'"></canvas>
   </div>
   <div class="col-lg-6 col-sm">
-    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
-      [chartType]="'bar'"></canvas>
-  </div>
-</div>
-<!--
-<div class="row">
-  <div class="col-lg-6 col-sm" *ngFor="let inventario of inventarios | slice:0:2;">
     <div class="table-responsive">
-      <table class="table">
+      <table class="table table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th colspan="5" class="centered-th">Productos</th>
+            <th colspan="5" class="centered-th">Inventario Reciente</th>
           </tr>
           <tr>
             <th scope="col">#</th>
@@ -42,10 +32,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let producto of inventario.productos | slice:0:4;">
-            <th scope="row">{{ producto.id }}</th>
-            <td>{{ producto.nombre }}</td>
-            <td>{{ producto.cantidad }}</td>
+          <tr *ngFor="let producto of productos | slice:0:4;">
+            <th scope="row">{{ producto._id }}</th>
+            <td>{{ producto.name }}</td>
+            <td>{{ producto.cantindad }}</td>
             <td>{{ producto.caducidad }}</td>
             <td>{{ producto.precio }}</td>
           </tr>
@@ -54,4 +44,3 @@
     </div>
   </div>
 </div>
--->

@@ -11,26 +11,13 @@
   </div>
 </div>
 <!-- Content -->
-{{ maxPrice | json }}
-<p>separator</p>
-{{ maxProd | json }}
-<div class="row">
+<div class="row pt-4">
   <div class="col-lg-6 col-sm">
     <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
       [chartType]="'bar'"></canvas>
   </div>
   <div class="col-lg-6 col-sm">
-    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
+    <canvas baseChart [datasets]="chartDataB" [labels]="chartLabelsB" [options]="chartOptions"
       [chartType]="'line'"></canvas>
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-6 col-sm">
-    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
-      [chartType]="'line'"></canvas>
-  </div>
-  <div class="col-lg-6 col-sm">
-    <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions"
-      [chartType]="'bar'"></canvas>
   </div>
 </div>
