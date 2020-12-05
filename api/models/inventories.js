@@ -5,6 +5,7 @@ let inventoriesSchema = new Schema({
   name: String,
   creationDate: Date,
   descripcion: String,
+  lang: String,
   uID: String,
 });
 

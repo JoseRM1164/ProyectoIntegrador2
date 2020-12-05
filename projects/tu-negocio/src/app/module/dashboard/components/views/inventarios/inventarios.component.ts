@@ -30,6 +30,11 @@ export class InventariosComponent implements OnInit {
     $('#sidebar').toggleClass('active');
   }
 
+  getLang() {
+    let lang = $("html").attr("lang");
+    return lang
+  }
+
   getInventarios(): void {
     this.inventariosService
       .getInventarios()
@@ -44,6 +49,7 @@ export class InventariosComponent implements OnInit {
       name: String(this.formInventario.value.nameInven),
       creationDate: new Date(),
       descripcion: String(this.formInventario.value.descripcionInven),
+      lang: String(this.getLang()),
       uID: '10'
     };
     this.inventariosService.addInventario(nuevoInven)
