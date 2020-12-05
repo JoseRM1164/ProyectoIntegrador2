@@ -3,9 +3,9 @@ const {Schema} = mongoose;
 
 let productoSchema = new Schema({
   name: String,
-  cantindad: String,
+  cantindad: Number,
 	caducidad: String,
-	precio: String,
+	precio: Number,
   invenID: String,
 });
 
