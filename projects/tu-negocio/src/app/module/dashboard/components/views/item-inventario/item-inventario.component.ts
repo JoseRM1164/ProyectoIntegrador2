@@ -12,7 +12,7 @@ declare let $: any;
   styleUrls: ['./item-inventario.component.scss']
 })
 export class ItemInventarioComponent implements OnInit {
-  // inventario: Inventario;
+  inventario: Inventario;
   dataTable: any;
   dtOptions: any;
   tableData: Producto[] = [];
@@ -29,7 +29,7 @@ export class ItemInventarioComponent implements OnInit {
     private formBuild: FormBuilder,
     private inventariosService: InventariosService
   ) {
-    // this.inventario = this.inventariosService.currentInventario;
+    this.inventario = this.inventariosService.currentInventario;
   }
 
   ngOnInit(): void {
@@ -42,18 +42,16 @@ export class ItemInventarioComponent implements OnInit {
 
 
   getInventario(): void {
-    /*
     this.inventariosService
-      .getInventarios()
-    .subscribe(inventarios => {
-      this.inventario = inventarios[0];
-      this.tableData = this.inventario.productos;
+    .getProductos(this.inventario._id)
+    .subscribe(productos => {
+      this.tableData = productos;
       this.dtOptions = {
         data: this.tableData,
         columns: [
-          { title: 'ID', data: 'id'},
-          { title: 'nombre', data: 'nombre'},
-          { title: 'cantidad', data: 'cantidad'},
+          { title: 'ID', data: '_id'},
+          { title: 'nombre', data: 'name'},
+          { title: 'cantidad', data: 'cantindad'},
           { title: 'caducidad', data: 'caducidad'},
           { title: 'precio', data: 'precio'}
         ]
@@ -62,7 +60,6 @@ export class ItemInventarioComponent implements OnInit {
       this.dataTable = $(this.table.nativeElement);
       this.dataTable.DataTable(this.dtOptions);
     });
-    */
   }
 
   enviar() {

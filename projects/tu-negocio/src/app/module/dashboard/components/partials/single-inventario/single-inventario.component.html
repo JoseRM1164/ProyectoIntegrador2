@@ -1,31 +1,9 @@
 <div class="card text-center ">
   <div class="card-body">
-    <h5 class="card-title">I #{{inventario.id}}</h5>
-    <!--
-    <table class="table table-responsive">
-      <thead class="thead-dark">
-        <tr>
-          <th colspan="5" class="centered-th">Carros</th>
-        </tr>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Caducidad</th>
-          <th scope="col">Precio</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let producto of inventario.productos | slice:0:4;">
-          <th scope="row" class="text-nowrap">{{ producto.id }}</th>
-          <td class="text-nowrap">{{ producto.nombre }}</td>
-          <td class="text-nowrap">{{ producto.cantidad }}</td>
-          <td class="text-nowrap">{{ producto.caducidad }}</td>
-          <td class="text-nowrap">{{ producto.precio }}</td>
-        </tr>
-      </tbody>
-    </table>
-    -->
-    <a routerLink="../item-inventario" class="btn btn-primary">Entrar</a>
+  <div class="card-body">
+    <h5 class="card-title">{{inventario.name}}</h5>
+    <p class="text-secondary">#{{inventario._id}}</p>
+    <p>{{ inventario.descripcion }}</p>
+    <a class="btn btn-primary" (click)="verInventario()">Entrar</a>
   </div>
 </div>

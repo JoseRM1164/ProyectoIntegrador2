@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { InventariosService } from '../../../services/inventarios.service';
 import { Inventario } from '../../../../../models/inventario';
@@ -11,13 +12,14 @@ import { Inventario } from '../../../../../models/inventario';
 export class SingleInventarioComponent implements OnInit {
   @Input() inventario!: Inventario;
 
-  constructor(private inventariosService: InventariosService) { }
+  constructor(private router: Router, private inventariosService: InventariosService) { }
 
   ngOnInit(): void {
   }
 
   verInventario() {
-    // this.inventariosService.modificarInventario(this.inventario);
+    this.router.navigateByUrl('/dashboard/item-inventario');
+    this.inventariosService.accederInventario(this.inventario);
   }
 
 }

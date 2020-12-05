@@ -9,27 +9,27 @@ import {
 } from '@angular/common/http';
 
 import {Inventario} from '../../../models/inventario';
+import {Producto} from '../../../models/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InventariosService {
-  private endpoint = 'http://localhost:4000/api/rInven';
+  private endpoint = 'http://localhost:4000/api';
 
-  /*
   currentInventario: Inventario = {
-    id: 0,
-    productos: []
+    _id: 'none',
+    name: 'none',
+    descripcion: 'none',
+    creationDate: 'none',
+    uID: 'none'
   };
-  */
 
   constructor(private http: HttpClient) {}
 
-  /*
-  modificarInventario(inventario: Inventario) {
+  accederInventario(inventario: Inventario) {
     this.currentInventario = inventario;
   }
-  */
 
   private extraData(res: Response) {
     let body = res;
@@ -49,11 +49,11 @@ export class InventariosService {
   }
 
   getInventarios(): Observable<Inventario[]> {
-    return this.http.get<Inventario[]>(this.endpoint).pipe(retry(3), catchError(this.handleError));
+    return this.http.get<Inventario[]>(this.endpoint + '/rInven').pipe(retry(3), catchError(this.handleError));
   }
 
-  getInventario(id: string): Observable<Inventario> {
-    return this.http.get<Inventario>(this.endpoint + '/' + id).pipe(retry(3), catchError(this.handleError));
+  getProductos(id: string): Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.endpoint + '/rProd?invenID=' + id).pipe(retry(3), catchError(this.handleError));
   }
 
   addInventario(inventario: Inventario): Observable<Inventario> {
