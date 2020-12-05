@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-let inventorie = require('../../models/inventories');
+let Productos = require('../../models/productos');
 
 router.get('/', async (req, res, next) => {
-	const inventarios = await inventorie.find(
-		{'uID': req.body.uID}
+	const productos = await Productos.find(
+		{'invenID': req.body.invenID}
 	);
 	
-	res.json(inventarios);
+	res.json(productos);
 });
 
 module.exports = router;

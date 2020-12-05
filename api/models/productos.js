@@ -9,5 +9,5 @@ let productoSchema = new Schema({
   invenID: String,
 });
 
-let producto = mongoose.model('inventories', productoSchema, 'Inventories')
+let producto = mongoose.model('Productos', productoSchema, 'Productos')
 module.exports = producto;
