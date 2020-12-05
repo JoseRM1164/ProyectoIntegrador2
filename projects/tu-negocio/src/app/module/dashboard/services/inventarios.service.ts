@@ -8,7 +8,7 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 
-import {Inventario} from '../../../models/inventario';
+import {Inventario, MaxPriceInv, MaxProdInv} from '../../../models/inventario';
 import {Producto} from '../../../models/producto';
 
 @Injectable({
@@ -50,6 +50,10 @@ export class InventariosService {
     window.alert(errorMessage);
     return throwError(errorMessage);
   }
+  
+  getMaxPriceInventarios(): Observable<MaxPriceInv[]> {
+    return this.http.get<MaxPriceInv[]>(this.endpoint + '/maxPrice').pipe(retry(3), catchError(this.handleError));
+  }
 
   getInventarios(lang: string): Observable<Inventario[]> {
     return this.http.get<Inventario[]>(this.endpoint + '/rInven?lang=' + lang).pipe(retry(3), catchError(this.handleError));
@@ -67,8 +71,8 @@ export class InventariosService {
     return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
   }
 
-  getMaxProd(): Observable<Inventario[]> {
-    return this.http.get<Inventario[]>(this.endpoint + '/maxProd').pipe(retry(3), catchError(this.handleError));
+  getMaxProd(): Observable<MaxProdInv[]> {
+    return this.http.get<MaxProdInv[]>(this.endpoint + '/maxProd').pipe(retry(3), catchError(this.handleError));
   }
   
   deleteInventario(inventario: Inventario): Observable<Inventario> {

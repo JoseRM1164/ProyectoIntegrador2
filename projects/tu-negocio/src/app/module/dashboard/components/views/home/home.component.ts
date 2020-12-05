@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InventariosService } from '../../../services/inventarios.service';
-import { Inventario } from '../../../../../models/inventario';
+import { MaxPriceInv } from '../../../../../models/inventario';
+import { Producto } from '../../../../../models/producto';
 
 declare let $: any;
 @Component({
@@ -10,29 +11,27 @@ declare let $: any;
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  inventarios: Inventario[];
+  productos: Producto[] = [];
+  maxPrice: MaxPriceInv[] = [];
+
+  public chartLabels: string[] = [];
+  public chartOptions = { responsive: true };
+  public dataChart: number[] = [];
+  public chartData = [
+    { data: this.dataChart, label: 'Inventarios' }
+  ];
 
   constructor(private inventariosService: InventariosService) {
-    this.inventarios = [];
   }
 
   ngOnInit(): void {
     this.getInventarios();
+    this.getMaxPrice();
   }
 
   toggleSidebar() {
     $('#sidebar').toggleClass('active');
   }
-
-  public chartOptions = { responsive: true };
-
-  public chartData = [
-    { data: [330, 600, 260, 700], label: 'Account A' },
-    { data: [120, 455, 100, 340], label: 'Account B' },
-    { data: [45, 67, 800, 500], label: 'Account C' }
-  ];
-
-  public chartLabels = ['January', 'February', 'Mars', 'April'];
 
   getLang() {
     let lang = $("html").attr("lang");
@@ -42,7 +41,29 @@ export class HomeComponent implements OnInit {
   getInventarios(): void {
     this.inventariosService
       .getInventarios(this.getLang())
-      .subscribe(inventarios => (this.inventarios = inventarios));
+    .subscribe(inventarios => {
+      this.getLatestProds(inventarios[0]._id);
+    });
+    // this.inventariosService.currentInventario = this.inventarios[0];
+  }
+  
+  getLatestProds(idinv: string): void {
+    this.inventariosService
+    .getProductos(idinv)
+    .subscribe(productos => {
+      this.productos = productos;
+    });
+  }
+
+  getMaxPrice(): void {
+    this.inventariosService.getMaxPriceInventarios()
+    .subscribe(maxprices => {
+      this.maxPrice = maxprices;
+      this.maxPrice.forEach(price => {
+        this.chartLabels.push(price._id);
+        this.dataChart.push(price.sumTotal);
+      });
+    });
   }
 
 }
