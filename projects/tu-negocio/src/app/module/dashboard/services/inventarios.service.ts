@@ -17,6 +17,8 @@ import {Producto} from '../../../models/producto';
 export class InventariosService {
   private endpoint = 'http://localhost:4000/api';
 
+  inventarios: Inventario[] = [];
+
   currentInventario: Inventario = {
     _id: 'none',
     name: 'none',
@@ -64,15 +66,8 @@ export class InventariosService {
     return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
   }
   
-  deleteInventario(inventario: Inventario) {
-    this.http.delete<Inventario>(this.endpoint + '/dInven', inventario).subscribe({
-      next: data => {
-        console.log('datos', data);
-      },
-      error: error => {
-        this.handleError(error);
-      }
-    });
+  deleteInventario(inventario: Inventario): Observable<Inventario> {
+    return this.http.delete<Inventario>(this.endpoint + '/dInven?invenID=' + inventario._id).pipe(retry(3), catchError(this.handleError));
   }
 }
 
