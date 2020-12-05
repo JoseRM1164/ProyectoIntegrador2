@@ -15,7 +15,7 @@ import {Producto} from '../../../models/producto';
   providedIn: 'root'
 })
 export class InventariosService {
-  private endpoint = 'http://localhost:4000/api';
+  endpoint = 'http://localhost:4000/api';
 
   inventarios: Inventario[] = [];
 
@@ -45,7 +45,7 @@ export class InventariosService {
       // Client side errors
     } else { 
       // Server side errors
-      errorMessage = `Codigo de error ${error.status}, por favor contacte al admin."`;
+      errorMessage = `Codigo de error ${error.status}, por favor contacte al admin.`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
