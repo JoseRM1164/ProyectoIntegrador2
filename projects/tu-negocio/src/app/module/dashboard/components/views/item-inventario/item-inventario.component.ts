@@ -43,16 +43,15 @@ export class ItemInventarioComponent implements OnInit {
 
   getInventario(): void {
     this.inventariosService
-      .getInventarios()
-    .subscribe(inventarios => {
-      this.inventario = inventarios[0];
-      this.tableData = this.inventario.productos;
+    .getProductos(this.inventario._id)
+    .subscribe(productos => {
+      this.tableData = productos;
       this.dtOptions = {
         data: this.tableData,
         columns: [
-          { title: 'ID', data: 'id'},
-          { title: 'nombre', data: 'nombre'},
-          { title: 'cantidad', data: 'cantidad'},
+          { title: 'ID', data: '_id'},
+          { title: 'nombre', data: 'name'},
+          { title: 'cantidad', data: 'cantindad'},
           { title: 'caducidad', data: 'caducidad'},
           { title: 'precio', data: 'precio'}
         ]
@@ -65,14 +64,23 @@ export class ItemInventarioComponent implements OnInit {
 
   enviar() {
     const nuevoProducto: Producto = {
-      id: 5,
-      nombre: String(this.modeloProducto.value.nombreProducto),
-      cantidad: Number(this.modeloProducto.value.cantidadProducto),
+      _id: 'Nuevo!',
+      name: String(this.modeloProducto.value.nombreProducto),
+      cantindad: String(this.modeloProducto.value.cantidadProducto),
       caducidad: String(this.modeloProducto.value.caducidadProducto),
-      precio: Number(this.modeloProducto.value.precioProducto)
+      precio: String(this.modeloProducto.value.precioProducto),
+      invenID: this.inventario._id
     };
-    this.inventario.productos.push(nuevoProducto);
-    this.inventariosService.updateInventario(this.inventario);
+    this.inventariosService.addProducto(nuevoProducto)
+      .subscribe(producto => {
+        this.tableData.push(nuevoProducto);
+        this.dataTable.row.add([
+          'one',
+          'two',
+          'tree',
+          'four'
+        ]).draw();
+      });
     $('#ProductoModal').modal('hide');
   }
 }

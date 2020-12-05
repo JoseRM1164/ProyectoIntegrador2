@@ -1,3 +1,4 @@
+// Deprected: No perfil call to api
 import { Component, OnInit } from '@angular/core';
 
 import { PerfilesService } from '../../../services/perfiles.service';

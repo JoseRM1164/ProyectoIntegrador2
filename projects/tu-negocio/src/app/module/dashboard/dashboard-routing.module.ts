@@ -5,8 +5,8 @@ import { DashboardComponent } from './components/views/dashboard/dashboard.compo
 import { HomeComponent } from './components/views/home/home.component';
 import { InventariosComponent } from './components/views/inventarios/inventarios.component';
 import { ItemInventarioComponent } from './components/views/item-inventario/item-inventario.component';
-import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
-import { PerfilComponent } from './components/views/perfil/perfil.component';
+// import { NuevoPerfilComponent } from './components/views/nuevo-perfil/nuevo-perfil.component';
+// import { PerfilComponent } from './components/views/perfil/perfil.component';
 import { MiPerfilComponent } from './components/views/mi-perfil/mi-perfil.component';
 import { ReportesComponent } from './components/views/reportes/reportes.component';
 import { from } from 'rxjs';

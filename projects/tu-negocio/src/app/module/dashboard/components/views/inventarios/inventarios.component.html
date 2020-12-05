@@ -31,87 +31,53 @@
     aria-labelledby="newModal"
     aria-hidden="true"
   >
-    <div class="modal-dialog text-center" role="document">
-      <div class="modal-content d-flex justify-content-center">
-        <div class="modal-header">
-          <h4 class="modal-title w-100 font-weight-bold">Nuevo Inventario</h4>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">
+          Nuevo Inventario
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="formInventario" (ngSubmit)="enviar()">
         <div class="modal-body mx-3">
-          <h3 class="text-center">
-            Escoge tu inventario
-          </h3>
-
-          <!--Tables-->
-          <div class="card modal-card text-center ">
-            <div class="card-body">
-              <h5 class="card-title">Inventario</h5>
-              <table class="table table-sm table-responsive">
-                <thead class="thead-dark">
-                  <tr>
-                    <th colspan="5" class="centered-th">Productos</th>
-                  </tr>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Caducidad</th>
-                    <th scope="col">Precio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Producto</td>
-                    <td>1000</td>
-                    <td>12-12-2030</td>
-                    <td>$1000</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Producto</td>
-                    <td>1000</td>
-                    <td>12-12-2030</td>
-                    <td>$1000</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Producto</td>
-                    <td>1000</td>
-                    <td>12-12-2030</td>
-                    <td>$1000</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Producto</td>
-                    <td>1000</td>
-                    <td>12-12-2030</td>
-                    <td>$1000</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Producto</td>
-                    <td>1000</td>
-                    <td>12-12-2030</td>
-                    <td>$1000</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="text-nowrap m-3">
+            <h2 class="text-md-left">
+              Nombre :
+              <input
+                type="text"
+                formControlName="nameInven"
+                class="form-control m-4"
+                placeholder="Añadir Nombre"
+                required
+              />
+            </h2>
+            <h2 class="text-md-left">
+              Descripcion :
+              <input
+                type="text"
+                formControlName="descripcionInven"
+                class="form-control m-4"
+                placeholder="Añadir Descripcion"
+                required
+              />
+            </h2>
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-primary" (click)="nuevoInventario()"
-            >Crear</button>
+          <button type="submit" class="btn btn-primary my-1 mr-md-3 btn-custom">
+            Crear
+          </button>
         </div>
-      </div>
+        </form>
     </div>
+  </div>
   </div>
 </div>
