@@ -1,7 +1,7 @@
 export interface Inventario {
   _id: string;
   name: string;
-  creationDate: string;
+  creationDate: Date;
   descripcion: string;
   uID: string;
 }

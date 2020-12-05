@@ -21,7 +21,7 @@ export class InventariosService {
     _id: 'none',
     name: 'none',
     descripcion: 'none',
-    creationDate: 'none',
+    creationDate: new Date(),
     uID: 'none'
   };
 
@@ -57,7 +57,7 @@ export class InventariosService {
   }
 
   addInventario(inventario: Inventario): Observable<Inventario> {
-    return this.http.post<Inventario>(this.endpoint, inventario).pipe(retry(3), catchError(this.handleError));
+    return this.http.post<Inventario>(this.endpoint + '/cInven', inventario).pipe(retry(3), catchError(this.handleError));
   }
 
   updateInventario(inventario: Inventario, id: string) {
