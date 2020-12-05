@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { InventariosService } from '../../../services/inventarios.service';
+import { MaxPriceInv } from '../../../../../models/inventario';
+
 declare let $: any;
 @Component({
   selector: 'app-reportes',
@@ -7,10 +10,17 @@ declare let $: any;
   styleUrls: ['./reportes.component.scss']
 })
 export class ReportesComponent implements OnInit {
+  maxPrice: MaxPriceInv[] = []
 
-  constructor() { }
+  constructor(private inventariosService: InventariosService) { }
 
   ngOnInit(): void {
+    this.getMaxPrice();
+  }
+
+  getMaxPrice(): void {
+    this.inventariosService.getMaxPriceInventarios()
+    .subscribe(maxprices => this.maxPrice = maxprices);
   }
   
   toggleSidebar() {

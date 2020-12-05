@@ -6,3 +6,8 @@ export interface Inventario {
   lang: string;
   uID: string;
 }
+
+export interface MaxPriceInv {
+  _id: string;
+  sumTotal: number;
+}
