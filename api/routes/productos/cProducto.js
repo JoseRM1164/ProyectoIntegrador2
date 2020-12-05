@@ -6,7 +6,7 @@ let Producto = require("../../models/productos");
 
 router.post("/", [
   body("name").isString(),
-  body("cantidad").isNumeric(),
+  body("cantindad").isNumeric(),
   body("caducidad").isString(),
   body("precio").isNumeric()
 ], async (req, res, next) => {
