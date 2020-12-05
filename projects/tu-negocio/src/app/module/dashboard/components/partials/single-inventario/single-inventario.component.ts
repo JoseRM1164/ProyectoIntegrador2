@@ -22,4 +22,9 @@ export class SingleInventarioComponent implements OnInit {
     this.inventariosService.accederInventario(this.inventario);
   }
 
+  borrarInventario() {
+    this.inventariosService.borrarInventario(this.inventario);
+    this.router.navigateByUrl('dashboard/inventarios');
+  }
+
 }

@@ -64,10 +64,10 @@ export class InventariosService {
     return this.http.post<Producto>(this.endpoint + '/cProd', producto).pipe(retry(3), catchError(this.handleError));
   }
   
-  deleteAlumno(id: string) {
-    this.http.delete<Inventario>(this.endpoint + '/' + id).subscribe({
+  deleteInventario(inventario: Inventario) {
+    this.http.delete<Inventario>(this.endpoint + '/dInven', inventario).subscribe({
       next: data => {
-        console.log('datos', data)
+        console.log('datos', data);
       },
       error: error => {
         this.handleError(error);
