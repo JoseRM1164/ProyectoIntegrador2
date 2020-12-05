@@ -33,7 +33,7 @@ export class InventariosComponent implements OnInit {
 
   getInventarios(): void {
     this.inventariosService
-      .getInventarios()
+      .getInventarios(this.getLang())
       .subscribe(inventarios => (this.inventariosService.inventarios = inventarios));
     // this.inventariosService.currentInventario = this.inventarios[0];
   }
