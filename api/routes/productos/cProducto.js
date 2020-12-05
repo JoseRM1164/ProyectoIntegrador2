@@ -9,7 +9,7 @@ router.post("/", [
   body("cantindad").isNumeric(),
   body("caducidad").isString(),
   body("precio").isNumeric()
-], async (req, res, next) => {
+], jwt.checkJWT, async (req, res, next) => {
   let errors = validationResult(req);
   if(!errors.isEmpty()) return res.status(400).json({ errors: errors.array()});
   try{
@@ -23,7 +23,7 @@ router.post("/", [
   
     let newProd = await newProducto.save();
    
-    res.status(200).json({
+    res.status(201).json({
       newProd,
       success: true,
       message: "Creación exitosa",

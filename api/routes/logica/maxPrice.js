@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('../../config/configJWT');
 
 let Productos = require('../../models/productos');
 
-router.get('/', async (req, res) => {
+router.get('/', jwt.checkJWT,  async (req, res) => {
 	Productos.aggregate([
 		{
 			$group: {
