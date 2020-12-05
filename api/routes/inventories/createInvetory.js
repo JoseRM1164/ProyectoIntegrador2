@@ -1,11 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require('../../config/configJWT');
+const { body, validationResult } = require("express-validator");
 let inventories = require("../../models/inventories");
 
-router.post("/", async (req, res, next) => {
-  try {
-    console.log(req.body.name)
+router.post("/", [
+  body("name").isString(),
+  body("descripcion").isString()
+], jwt.checkJWT,async (req, res, next) => {
+  let errors = validationResult(req);
+  if(!errors.isEmpty()) return res.status(400).json({ errors: errors.array()});
+  try{
     let newInventory = new inventories({
       name: req.body.name,
       creationDate: Date.now(),
@@ -15,7 +20,7 @@ router.post("/", async (req, res, next) => {
     });
 
     await newInventory.save();
- 
+
     res.status(200).json({
       success: true,
       message: "Creación exitosa",
@@ -24,7 +29,6 @@ router.post("/", async (req, res, next) => {
     console.log(err)
     res.status(400).send(err);
   }
-
 });
 
 module.exports = router;

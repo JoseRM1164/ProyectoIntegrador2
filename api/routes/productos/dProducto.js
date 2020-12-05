@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-let Productos = require('../../models/inventories');
+let Productos = require('../../models/productos');
 
 router.delete('/', async (req, res, next) => {
 	try {
