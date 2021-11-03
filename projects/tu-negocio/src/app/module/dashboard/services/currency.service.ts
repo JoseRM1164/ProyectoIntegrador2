@@ -14,7 +14,8 @@ import { Currency } from '../../../models/currency';
   providedIn: 'root'
 })
 export class CurrencyService {
-  private endpoint = 'https://api.exchangeratesapi.io/latest?base=MXN&symbols=USD,CAD,EUR';
+  private endpoint = 'http://api.exchangeratesapi.io/v1/latest?access_key=3c769cacb03aa41219c5dc0d4c7fa128'
+  ;
 
   constructor(private http: HttpClient) {}
 
