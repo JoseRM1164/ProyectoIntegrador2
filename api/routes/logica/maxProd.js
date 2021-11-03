@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('../../config/configJWT');
 
 let Inventarios = require('../../models/inventories');
 
-router.get('/', jwt.checkJWT, async (req, res) => {
+router.get('/', async (req, res) => {
 	Inventarios.aggregate([
 		{
 			$project: {

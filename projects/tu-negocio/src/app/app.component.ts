@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { animacionesClase } from './animaciones'; 
-import { AuthService } from '@auth0/auth0-angular';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +15,4 @@ export class AppComponent {
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
     );
   } 
-
-  constructor(public auth: AuthService) {}
-  
 }   

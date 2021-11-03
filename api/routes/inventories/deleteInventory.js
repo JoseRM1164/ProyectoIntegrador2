@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 let inventorie = require('../../models/inventories');
-const jwt = require('../../config/configJWT');
 
-router.delete('/', jwt.checkJWT, async (req, res, next) => {
+router.delete('/', async (req, res, next) => {
 	try {
 		let dID = req.query.invenID;
 		await inventorie.deleteOne({ _id: dID});

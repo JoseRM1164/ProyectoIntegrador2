@@ -7,7 +7,7 @@ let inventories = require("../../models/inventories");
 router.post("/", [
   body("name").isString(),
   body("descripcion").isString()
-], jwt.checkJWT, async (req, res, next) => {
+],async (req, res, next) => {
   let errors = validationResult(req);
   let date = Date.now();
   if(!errors.isEmpty()) return res.status(400).json({ errors: errors.array()});
@@ -22,7 +22,7 @@ router.post("/", [
 
     let newAddition = await newInventory.save();
 
-    res.status(201).json({
+    res.status(200).json({
       newAddition,
       success: true,
       message: "Creación exitosa",
